@@ -3,7 +3,7 @@ var translations = {
     hi: 'Hi',
     welcome: 'Welcome to Codejobs'
   },
-  login: "Login"
+  login: "Sign In"
 };
 
 module.exports = translations;

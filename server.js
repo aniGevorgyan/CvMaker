@@ -1,8 +1,13 @@
 var express = require('express');
 var app = express();
-// var i18n = require('./i18n');
-var port = process.env.PORT || 5555;
+require('./system/prototype');
+
+global.config = require('./config');
+global.i18n = require('./system/helpers/i18n');
+
+var port = process.env.PORT || global.config.site.port;
 var path = require('path');
+
 
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -16,8 +21,6 @@ var configDB = require('./config/database.js');
 mongoose.connect(configDB.url);
 require('./config/passport')(passport);
 
-// app.use(i18n);
-
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -29,25 +32,13 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
-require('./system/prototype');
-
-global.config = require('./config');
-global.i18n = require('./system/helpers/i18n');
-
 global.i18n.setLanguage();
 
-
-app.set('view engine', 'ejs');
-
-
-// app.use('/', function(req, res){
-// 	res.send('Our First Express program!');
-// 	console.log(req.cookies);
-// 	console.log('================');
-// 	console.log(req.session);
-// });
+app.engine('ejs', require('ejs-locals'));
+app.set('view engine', global.config.site.html.engine);
 
 require('./app/routes.js')(app, passport);
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(port);
