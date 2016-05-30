@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CvMaker</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+	<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row">
+		<header>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 top_line">
+				<nav class="pull-right">
+					<a href="/en/">Eng</a>
+					<a href="/ru/">Rus</a>
+					<a href="/hy/">Arm</a>
+				</nav>
+			</div>
+			<div class="col-lg-4 col-lg-offset-4 logo col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3 logo">
+				<p>ArmCv</p>
+			</div>
+		</header>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content_1">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+				<h3>Easily create online resumes<br/> and customized PDFs to land your next job.</h3>
+				<input id="round" type="submit" value="Try FREE!" />
+				<br/>
+				<a href="/<%= language%>/login"><%= global.lang.login%></a>
+				<a href="/<%= language%>/signup">Sign Up</a>
+				<a href="/auth/facebook" class="btn btn-primary"><span style="margin-top: -10px" class="fa fa-facebook"></span></a>
+			</div>
+			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 content_2">
+				<h2>Many Awesome Templates</h2>
+				<img src="/images/cv-template-avant.png" alt="img_1" />
+				<img src="/images/cv-template-brooklyn.png" alt="img_2" />
+				<img src="/images/cv-template-online-resume-verge.png" alt="img_3" />
+				<div class="brands"></div>
+			</div>
+		</div>
+		<footer>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer_line">
+				<p>CV Maker &copy; 2016. All Rights Reserved.</p>
+			</div>
+		</footer>
+	</div>
+</div>
+</body>
+
+</html>

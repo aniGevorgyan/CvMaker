@@ -1,0 +1,141 @@
+body,
+.container-fluid,
+.row {
+    padding: 0 !important;
+    margin: 0 !important;
+    color: white;
+    /*font-family: "Times New Roman";*/
+}
+
+.top_line {
+    height: 42px;
+    background-color: #006bb3;
+    float: left;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a, .content_1 a {
+    color: #ffffff;
+    margin: 5px;
+    font-size: 16px;
+}
+
+nav a:hover, .content_1 a:hover {
+    text-decoration: none;
+    color: darkgray;
+}
+
+.logo {
+    background: url(../images/logo.png);
+    background-size: cover;
+    float: left;
+    text-align: center;
+    color: #ffffff;
+    position: absolute;
+    z-index: 99;
+    margin-top: 30px;
+}
+
+.logo p {
+    font-size: 60px;
+}
+
+.content_1 {
+    background: url(../images/bg.png);
+    background-size: cover;
+    min-height: 600px;
+}
+
+.content_1 div:first-child {
+    background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/layer_7.png) center;
+    background-size: cover;
+    height: 400px;
+    border: 10px solid #B2C0CE;
+    text-align: center;
+}
+
+.content_1 div h3 {
+    margin-top: 100px;
+    line-height: 30px;
+}
+
+input#round {
+    margin: 20px;
+    width: 150px; /*same as the height*/
+    height: 60px; /*same as the width*/
+    background-color: #206FA7;
+    border: 1px solid #206FA7; /*same colour as the background*/
+    color: #fff;
+    font-size: 1.6em;
+    /*set the border-radius at half the size of the width and height*/
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    /*give the button a small drop shadow*/
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .75);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .75);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, .75);
+}
+
+/***NOW STYLE THE BUTTON'S HOVER STATE***/
+input#round:hover {
+    background: #206FA7;
+    border: 1px solid #206FA7;
+    /*reduce the size of the shadow to give a pushed effect*/
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, .75);
+    -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, .75);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .75);
+}
+
+/*.content_1 a {*/
+    /*margin-top: 30px*/
+/*}*/
+
+.content_2 {
+    text-align: center;
+    color: #206FA7;
+}
+
+.content_2 h2{
+    margin-top: 50px;
+    font-weight: bold;
+}
+.content_2 img{
+    height: 200px;
+    margin-top:30px;
+    -webkit-transition: margin 1s ease-in-out;
+    transition: margin 1s ease-in-out;
+}
+.content_2 img:hover{
+    margin-top:10px;
+    /*-webkit-transform: rotateZ(60deg); !* Safari *!*/
+    /*transform: rotateZ(60deg);*/
+}
+
+.brands{
+    width: 100%;
+    background: url(../images/brands.png);
+    background-size: cover;
+    height: 52px;
+    margin-bottom: 50px;
+}
+
+.footer_line{
+    background: #02547A;
+    height:75px;
+    text-align: center;
+}
+.footer_line p{
+    color: #ffffff;
+    font-size: 18px;
+    margin-top:25px
+}
+
+@media screen and (max-width: 769px) {
+    .logo p {
+        font-size: 30px;
+    }
+}
