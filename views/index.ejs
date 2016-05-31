@@ -1,18 +1,17 @@
 <% layout('layout/page') %>
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content_1">
-			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-				<h3>Easily create online resumes<br/> and customized PDFs to land your next job.</h3>
-				<input id="round" type="submit" value="Try FREE!" />
-				<br/>
-				<a href="/<%= language%>/login"><%= global.lang.login%></a>
-				<a href="/<%= language%>/signup">Sign Up</a>
-				<a href="/auth/facebook" class="btn btn-primary"><span style="margin-top: -10px" class="fa fa-facebook"></span></a>
-			</div>
-			<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 content_2">
-				<h2>Many Awesome Templates</h2>
-				<img src="/images/cv-template-avant.png" alt="img_1" />
-				<img src="/images/cv-template-brooklyn.png" alt="img_2" />
-				<img src="/images/cv-template-online-resume-verge.png" alt="img_3" />
-				<div class="brands"></div>
-			</div>
-		</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content_1">
+    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+        <h3>Easily create online resumes<br/> and customized PDFs to land your next job.</h3>
+        <input id="round" type="submit" value="Try FREE!" onclick="location.href='/<%= language %>/free'"/><br/>
+        <a href="/<%= language %>/login"><%= global.lang.login %></a>
+        <a href="/<%= language %>/signup">Sign Up</a>
+        <a href="/auth/facebook" class="btn btn-primary"><span style="margin-top: -10px" class="fa fa-facebook"></span></a>
+    </div>
+    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 content_2">
+        <h2>Many Awesome Templates</h2>
+        <img src="/images/cv-template-avant.png" alt="img_1"/>
+        <img src="/images/cv-template-brooklyn.png" alt="img_2"/>
+        <img src="/images/cv-template-online-resume-verge.png" alt="img_3"/>
+        <div class="brands"></div>
+    </div>
+</div>

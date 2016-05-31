@@ -19,7 +19,8 @@ module.exports = function(app, passport){
 		global.i18n.setLanguage(req.params.lang);
 		res.render('login.ejs', { 
 			message: req.flash('loginMessage'),
-			language: req.params.lang
+			language: req.params.lang,
+			originalUrl: 'login'
 		});
 	});
 	app.post('/login', passport.authenticate('local-login', {
@@ -31,7 +32,8 @@ module.exports = function(app, passport){
 	app.get('/:lang(' + languages + ')/signup', function(req, res){
 		res.render('signup.ejs', {
 			message: req.flash('signupMessage'),
-			language: req.params.lang
+			language: req.params.lang,
+			originalUrl: 'signup'
 		});
 	});
 
@@ -43,7 +45,18 @@ module.exports = function(app, passport){
 
 	app.get('/profile', isLoggedIn, function(req, res){
 		global.i18n.setLanguage(req.params.lang);
-		res.render('profile.ejs', { user: req.user });
+		res.render('profile.ejs', {
+			user: req.user,
+			originalUrl: '/profile'
+		});
+	});
+
+	app.get('/:lang(' + languages + ')/free', function(req, res){
+		global.i18n.setLanguage(req.params.lang);
+		res.render('free.ejs', {
+			language: req.params.lang,
+			originalUrl: '/free'
+		});
 	});
 
 	app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email']}));

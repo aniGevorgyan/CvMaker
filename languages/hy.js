@@ -3,7 +3,8 @@ var translations = {
     hi: 'Բարև',
     welcome: 'Բարի Գալուստ'
   },
-  login: "Մուտք"
+  login: "Մուտք",
+  name: "Անուն"
 };
 
 module.exports = translations;

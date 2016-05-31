@@ -6,7 +6,8 @@ var translations = {
         hi: 'Привет',
         welcome: 'лалалалалала'
     },
-    login: "Вход"
+    login: "Вход",
+    name:"Имя"
 };
 
 module.exports = translations;
