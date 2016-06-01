@@ -55,7 +55,7 @@ module.exports = function(app, passport){
 		global.i18n.setLanguage(req.params.lang);
 		res.render('free.ejs', {
 			language: req.params.lang,
-			originalUrl: '/free'
+			originalUrl: 'free'
 		});
 	});
 
