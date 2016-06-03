@@ -2,22 +2,23 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content_login">
     <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 login_form">
         <form action="/kuku" method="post">
-            <h1><span class="fa fa-info"></span> Personal info </h1>
+            <h1><span class="fa fa-info"></span> <%= global.lang.personalInfo %> </h1>
             <div class="col-lg-5 col-lg-offset-1 free_page">
-                <input type="text" class="form-control" name="name" placeholder="<%= global.lang.name%>">
-                <input type="text" class="form-control" name="lastname" placeholder="Last Name">
-                <input type="date" class="form-control" name="dob" placeholder="Date of Birth">
-                <input type="text" class="form-control" name="nationality" placeholder="Nationality">
+                <input type="text" class="form-control" name="name" placeholder="<%= global.lang.name %>">
+                <input type="text" class="form-control" name="lastname" placeholder="<%= global.lang.lastName %>">
+                <input type="text" class="form-control" name="dob" placeholder="<%= global.lang.date %>">
+                <input type="text" class="form-control" name="nationality" placeholder="<%= global.lang.nationality %>">
             </div>
             <div class="col-lg-5 free_page">
-                <input type="email" class="form-control" name="email" placeholder="Email">
-                <input type="tel" class="form-control" name="phone" placeholder="Phone Number">
-                <input type="text" class="form-control" name="web" placeholder="Web">
-                <input type="text" class="form-control" name="address" placeholder="Address">
+                <input type="email" class="form-control" name="email" placeholder="<%= global.lang.email %>">
+                <input type="text" class="form-control" name="phone" placeholder="<%= global.lang.phoneNumber %>">
+                <input type="text" class="form-control" name="site" placeholder="<%= global.lang.web %>">
+                <input type="text" class="form-control" name="address" placeholder="<%= global.lang.address %>">
             </div>
-            <button type="submit" class="btn btn-info btn-lg">Preview</button>
-            <p>Please <a href="/<%= language%>/login">Sign in</a> for upload photo.</p>
-            <p>Or go <a href="/<%= language%>">home</a>.</p>
+            <button type="submit" class="btn btn-info btn-lg"><%= global.lang.preview %></button>
+            <p><%= global.lang.please %> <a
+                        href="/<%= language %>/login"><%= global.lang.login %></a> <%= global.lang.photo %></p>
+            <p><a href="/<%= language %>"><%= global.lang.home %></a></p>
         </form>
     </div>
 </div>

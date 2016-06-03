@@ -30,6 +30,7 @@ module.exports = function(app, passport){
 	}));
 
 	app.get('/:lang(' + languages + ')/signup', function(req, res){
+		global.i18n.setLanguage(req.params.lang);
 		res.render('signup.ejs', {
 			message: req.flash('signupMessage'),
 			language: req.params.lang,
