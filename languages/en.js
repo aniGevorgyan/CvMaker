@@ -1,7 +1,7 @@
 var translations = {
     site: {
         hi: 'Hi',
-        welcome: 'Welcome to Codejobs'
+        welcome: 'Welcome'
     },
     login: "Sign In",
     name: "Name",

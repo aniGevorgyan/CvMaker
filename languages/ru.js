@@ -4,7 +4,7 @@
 var translations = {
     site: {
         hi: 'Привет',
-        welcome: 'лалалалалала'
+        welcome: ''
     },
     login: "Вход",
     name: "Имя",
