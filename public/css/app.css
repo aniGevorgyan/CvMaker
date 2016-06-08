@@ -337,6 +337,51 @@ margin-top: 15px;
     animation-duration: .75s;
 }
 
+/*Preview free page*/
+.div{
+    width: 40%;
+    height: 815px;
+    position: absolute;
+    z-index: 99;
+    margin:0 auto;
+    margin-left: 30%;
+    display:none;
+}
+
+.div p, .div span{
+    color:black;
+}
+.img{
+    width: 100%;
+}
+.img1{
+    width: 60%;
+    margin-left: 20%;
+}
+.oneTr{
+    background: #fff;
+}
+.tooTr{
+    background: #ededed
+}
+
+.tdTextLeng{
+    position:absolute !important;
+    width: 33%;
+}
+.leftSpan{
+    margin: 0 auto;
+}
+.rightSpan{
+}
+.pText{
+    text-align:center;
+}
+.divTextSoft{
+    text-align: center;
+    margin-top: 3%;
+}
+
 
 @media screen and (max-width: 769px) {
     .logo p {
