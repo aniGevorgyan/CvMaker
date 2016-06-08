@@ -1,72 +1,78 @@
 <% layout('layout/page') %>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content_login">
     <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 login_form">
-        <form action="" method="post">
-            <h1><span class="fa fa-info"></span> <%= global.lang.personalInfo %> </h1>
-            <div class="col-lg-5 col-lg-offset-1 free_page">
-                <input type="text" class="form-control" name="name" placeholder="<%= global.lang.name %>">
-                <input type="text" class="form-control" name="lastname" placeholder="<%= global.lang.lastName %>">
-                <input type="text" class="form-control" name="dob" placeholder="<%= global.lang.date %>">
-                <input type="text" class="form-control" name="nationality" placeholder="<%= global.lang.nationality %>">
-            </div>
-            <div class="col-lg-5 free_page">
-                <input type="email" class="form-control" name="email" placeholder="<%= global.lang.email %>">
-                <input type="text" class="form-control" name="phone" placeholder="<%= global.lang.phoneNumber %>">
-                <input type="text" class="form-control" name="site" placeholder="<%= global.lang.web %>">
-                <input type="text" class="form-control" name="address" placeholder="<%= global.lang.address %>">
-            </div>
-            <button type="submit" class="btn btn-info btn-lg" id="preview"><%= global.lang.preview %></button>
-            <p><%= global.lang.please %> <a
-                        href="/<%= language %>/login"><%= global.lang.login %></a> <%= global.lang.photo %></p>
-            <p><a href="/<%= language %>"><%= global.lang.home %></a></p>
-        </form>
+        <h1><span class="fa fa-info"></span> <%= global.lang.personalInfo %> </h1>
+        <div class="col-lg-5 col-lg-offset-1 free_page">
+            <input type="text" class="form-control" name="firstName" placeholder="<%= global.lang.name %>">
+            <input type="text" class="form-control" name="lastName" placeholder="<%= global.lang.lastName %>">
+            <input type="text" class="form-control" name="dob" placeholder="<%= global.lang.date %>">
+            <input type="text" class="form-control" name="nationality" placeholder="<%= global.lang.nationality %>">
+        </div>
+        <div class="col-lg-5 free_page">
+            <input type="email" class="form-control" name="email" placeholder="<%= global.lang.email %>">
+            <input type="text" class="form-control" name="phone" placeholder="<%= global.lang.phoneNumber %>">
+            <input type="text" class="form-control" name="site" placeholder="<%= global.lang.web %>">
+            <input type="text" class="form-control" name="address" placeholder="<%= global.lang.address %>">
+        </div>
+        <button type="submit" class="btn btn-info btn-lg" id="preview"><%= global.lang.preview %></button>
+        <!--<button onclick="javascript:demoFromHTML()">PDF</button>-->
+        <!--<div id="editor"></div>-->
+        <!--<button id="cmd">generate PDF</button>-->
+        <p><%= global.lang.please %> <a href="/<%= language %>/login"><%= global.lang.login %></a> <%= global.lang.photo %></p>
+        <p><a href="/<%= language %>"><%= global.lang.home %></a></p>
     </div>
-    <table class="div">
-        <tr class="oneTr">
-            <td class="col-xs-2">
-                <img src="/images/papskok.png" class="img">
-            </td>
-            <td class="col-xs-10"></td>
-        </tr>
-        <tr class="tooTr">
-            <td class="col-xs-2">
-                <img src="/images/personal.png" class="img1">
-                <p class="pText">Personal info</p>
-            </td>
-            <td class="col-xs-10"></td>
-        </tr>
-        <tr class="oneTr">
-            <td class="col-xs-2">
-                <img src="/images/work.png" class="img1">
-                <p class="pText">Work experience</p>
-            </td>
-            <td class="col-xs-10"></td>
-        </tr>
-        <tr class="tooTr">
-            <td class="col-xs-2">
-                <img src="/images/uchoba.png" class="img1">
-                <p class="pText">Education</p>
-            </td>
-            <td class="col-xs-10"></td>
-        </tr>
-        <tr class="oneTr">
-            <td class="col-xs-2">
-                <img src="/images/Слой 2.png" class="img1">
-                <p class="pText">Skills</p>
-            </td>
-            <td class="col-xs-10 tdTextLeng">
-                <div class="col-xs-12 divTextLeng">
-                    <div class="col-xs-6 divTextSoft"><span class="leftSpan">Software</span></div>
-                    <div class="col-xs-6 divTextSoft"><span class="rightSpan">Languages</span></div>
-                </div>
-            </td>
-        </tr>
-        <tr class="tooTr">
-            <td class="col-xs-2">
-                <img src="/images/61-128.png" class="img1">
-                <p class="pText">Hobbies</p>
-            </td>
-            <td class="col-xs-10"></td>
-        </tr>
-    </table>
+    <div  class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 div bounceInLeft animated">
+        <table class="div" id="basic-table">
+            <tr class="oneTr">
+                <td class="col-xs-2">
+                    <img src="/images/papskok.png" class="img">
+                </td>
+                <td class="col-xs-10"><i class="fa fa-times fa-3x close_button pull-right" aria-hidden="true"></i></td>
+            </tr>
+            <tr class="tooTr">
+                <td class="col-xs-2">
+                    <img src="/images/personal.png" class="img1">
+                    <p class="pText">Personal info</p>
+                </td>
+                <td class="col-xs-10">
+                    <p class="firstName"></p>
+                    <p class="lastName"></p>
+                    <p class="dob"></p>
+                </td>
+            </tr>
+            <tr class="oneTr">
+                <td class="col-xs-2">
+                    <img src="/images/work.png" class="img1">
+                    <p class="pText">Work experience</p>
+                </td>
+                <td class="col-xs-10"></td>
+            </tr>
+            <tr class="tooTr">
+                <td class="col-xs-2">
+                    <img src="/images/uchoba.png" class="img1">
+                    <p class="pText">Education</p>
+                </td>
+                <td class="col-xs-10"></td>
+            </tr>
+            <tr class="oneTr">
+                <td class="col-xs-2">
+                    <img src="/images/Слой 2.png" class="img1">
+                    <p class="pText">Skills</p>
+                </td>
+                <td class="col-xs-10 tdTextLeng">
+                    <div class="col-xs-12 divTextLeng">
+                        <div class="col-xs-6 divTextSoft"><span class="leftSpan">Software</span></div>
+                        <div class="col-xs-6 divTextSoft"><span class="rightSpan">Languages</span></div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="tooTr">
+                <td class="col-xs-2">
+                    <img src="/images/61-128.png" class="img1">
+                    <p class="pText">Hobbies</p>
+                </td>
+                <td class="col-xs-10"></td>
+            </tr>
+        </table>
+    </div>
 </div>

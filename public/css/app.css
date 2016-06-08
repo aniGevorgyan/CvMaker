@@ -339,13 +339,18 @@ margin-top: 15px;
 
 /*Preview free page*/
 .div{
-    width: 40%;
-    height: 815px;
+    /*width: 40%;*/
+    min-height: 700px;
     position: absolute;
     z-index: 99;
-    margin:0 auto;
-    margin-left: 30%;
+    /*margin-top:-20px;*/
+    /*margin:0 auto;*/
+    /*margin-left: 30%;*/
     display:none;
+}
+.close_button{
+    color: rgba(24, 66, 108, 0.5);
+    margin: -65px -10px 0 0;
 }
 
 .div p, .div span{
