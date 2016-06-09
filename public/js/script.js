@@ -9,13 +9,20 @@ $(document).ready(function () {
     }
 
     $('#preview').click(function () {
-        $('.div').show();
+        $('.div').removeClass('bounceOutLeft').addClass('bounceInLeft').show();
+        $('').css('background','red');
         infoFromInputs("firstName");
         infoFromInputs("lastName");
         infoFromInputs("dob");
+        infoFromInputs("nationality");
+        infoFromInputs("email");
+        infoFromInputs("phone");
+        infoFromInputs("site");
+        infoFromInputs("address");
     });
     $('.close_button').click(function () {
-        $('.div').hide();
+        $('.div').removeClass('bounceInLeft').addClass('bounceOutLeft');
+        setTimeout(function(){$('.div').hide()}, 1500);
     });
 
     var doc = new jsPDF();
@@ -26,7 +33,7 @@ $(document).ready(function () {
     };
 
     $('#cmd').click(function () {
-        doc.fromHTML($('body').html(), 15, 15, {
+        doc.fromHTML($('.div').html(), 15, 15, {
             'width': 170,
             'elementHandlers': specialElementHandlers
         });

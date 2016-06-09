@@ -18,60 +18,86 @@
         <!--<button onclick="javascript:demoFromHTML()">PDF</button>-->
         <!--<div id="editor"></div>-->
         <!--<button id="cmd">generate PDF</button>-->
-        <p><%= global.lang.please %> <a href="/<%= language %>/login"><%= global.lang.login %></a> <%= global.lang.photo %></p>
+        <p><%= global.lang.please %> <a
+                    href="/<%= language %>/login"><%= global.lang.login %></a> <%= global.lang.photo %></p>
         <p><a href="/<%= language %>"><%= global.lang.home %></a></p>
     </div>
-    <div  class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 div bounceInLeft animated">
-        <table class="div" id="basic-table">
+    <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 div bounceInLeft animated">
+        <table class="div" id="basic-table" style="width: 100%">
             <tr class="oneTr">
-                <td class="col-xs-2">
-                    <img src="/images/papskok.png" class="img">
+                <td class="col-xs-6">
+                    <h2>Resume of <br/><span class="firstName"></span> <span class="lastName"></span></h2>
                 </td>
-                <td class="col-xs-10"><i class="fa fa-times fa-3x close_button pull-right" aria-hidden="true"></i></td>
+                <td class="col-xs-6"><i class="fa fa-times fa-3x close_button pull-right" aria-hidden="true"></i></td>
+            </tr>
+            <tr class="oneTr">
+                <td class="col-xs-12" colspan="2">
+                    <h3>Personal Information</h3>
+                </td>
             </tr>
             <tr class="tooTr">
-                <td class="col-xs-2">
-                    <img src="/images/personal.png" class="img1">
-                    <p class="pText">Personal info</p>
+                <td class="col-xs-6">
+                    <p>Name: </p>
                 </td>
-                <td class="col-xs-10">
+                <td class="col-xs-6">
                     <p class="firstName"></p>
+                </td>
+            </tr>
+            <tr class="oneTr">
+                <td class="col-xs-6">
+                    <p>Last Name: </p>
+                </td>
+                <td class="col-xs-6">
                     <p class="lastName"></p>
+                </td>
+            </tr>
+            <tr class="tooTr">
+                <td class="col-xs-6">
+                    <p>Date Of Birth: </p>
+                </td>
+                <td class="col-xs-6">
                     <p class="dob"></p>
                 </td>
             </tr>
             <tr class="oneTr">
-                <td class="col-xs-2">
-                    <img src="/images/work.png" class="img1">
-                    <p class="pText">Work experience</p>
+                <td class="col-xs-6">
+                    <p>Nationality: </p>
                 </td>
-                <td class="col-xs-10"></td>
+                <td class="col-xs-6">
+                    <p class="nationality"></p>
+                </td>
             </tr>
             <tr class="tooTr">
-                <td class="col-xs-2">
-                    <img src="/images/uchoba.png" class="img1">
-                    <p class="pText">Education</p>
+                <td class="col-xs-6">
+                    <p>Email: </p>
                 </td>
-                <td class="col-xs-10"></td>
+                <td class="col-xs-6">
+                    <p class="email"></p>
+                </td>
             </tr>
             <tr class="oneTr">
-                <td class="col-xs-2">
-                    <img src="/images/Слой 2.png" class="img1">
-                    <p class="pText">Skills</p>
+                <td class="col-xs-6">
+                    <p>Phone Number: </p>
                 </td>
-                <td class="col-xs-10 tdTextLeng">
-                    <div class="col-xs-12 divTextLeng">
-                        <div class="col-xs-6 divTextSoft"><span class="leftSpan">Software</span></div>
-                        <div class="col-xs-6 divTextSoft"><span class="rightSpan">Languages</span></div>
-                    </div>
+                <td class="col-xs-6">
+                    <p class="phone"></p>
                 </td>
             </tr>
             <tr class="tooTr">
-                <td class="col-xs-2">
-                    <img src="/images/61-128.png" class="img1">
-                    <p class="pText">Hobbies</p>
+                <td class="col-xs-6">
+                    <p>Site: </p>
                 </td>
-                <td class="col-xs-10"></td>
+                <td class="col-xs-6">
+                    <p class="site"></p>
+                </td>
+            </tr>
+            <tr class="oneTr">
+                <td class="col-xs-6">
+                    <p>Address: </p>
+                </td>
+                <td class="col-xs-6">
+                    <p class="address"></p>
+                </td>
             </tr>
         </table>
     </div>

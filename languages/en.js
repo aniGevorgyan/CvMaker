@@ -4,7 +4,7 @@ var translations = {
         welcome: 'Welcome'
     },
     login: "Sign In",
-    name: "Name",
+    name: "First Name",
     lastName: 'Last Name',
     date: 'Date of Birth',
     nationality: 'Nationality',
