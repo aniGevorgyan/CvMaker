@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    var page_height = $(window).height();
+    var page_height = $(document).innerHeight();
+    var page_width = $(document).innerWidth();
     $('.content_1').css('min-height', (page_height - 117) + 'px');
     $('.content_login').css('min-height', (page_height - 117) + 'px');
 
@@ -10,6 +11,9 @@ $(document).ready(function () {
 
     $('#preview').click(function () {
         $('.div').removeClass('bounceOutLeft').addClass('bounceInLeft').show();
+        $('.main_div').show();
+        $('.main_div').css('height',page_height-50+"px");
+        $('.main_div').css('width',page_width-30+"px");
         $('').css('background','red');
         infoFromInputs("firstName");
         infoFromInputs("lastName");
