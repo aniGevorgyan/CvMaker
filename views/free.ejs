@@ -2,19 +2,23 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content_login">
     <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 login_form">
         <h1><span class="fa fa-info"></span> <%= global.lang.personalInfo %> </h1>
-        <div class="col-lg-5 col-lg-offset-1 free_page">
-            <input type="text" class="form-control" name="firstName" placeholder="<%= global.lang.name %>">
-            <input type="text" class="form-control" name="lastName" placeholder="<%= global.lang.lastName %>">
-            <input type="text" class="form-control" name="dob" placeholder="<%= global.lang.date %>">
-            <input type="text" class="form-control" name="nationality" placeholder="<%= global.lang.nationality %>">
-        </div>
-        <div class="col-lg-5 free_page">
-            <input type="email" class="form-control" name="email" placeholder="<%= global.lang.email %>">
-            <input type="text" class="form-control" name="phone" placeholder="<%= global.lang.phoneNumber %>">
-            <input type="text" class="form-control" name="site" placeholder="<%= global.lang.web %>">
-            <input type="text" class="form-control" name="address" placeholder="<%= global.lang.address %>">
-        </div>
-        <button type="submit" class="btn btn-info btn-lg" id="preview"><%= global.lang.preview %></button>
+        <form name="myForm" novalidate>
+            <div class="col-lg-5 col-lg-offset-1 free_page">
+                <input type="text" class="form-control" name="firstName" ng-model="firstName" ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"  placeholder="<%= global.lang.name %>" required>
+                <input type="text" class="form-control" name="lastName" ng-minlength="3" ng-maxlength="20" ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-model="lastName" required placeholder="<%= global.lang.lastName %>">
+                <input type="text" class="form-control" name="dob" ng-minlength="3" ng-maxlength="20" ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="dob" required placeholder="<%= global.lang.date %> (YYYY-MM-DD)">
+                <input type="text" class="form-control" name="nationality" ng-minlength="3" ng-maxlength="20" ng-pattern="/[a-zա-ֆа-я]{3,20}/i" ng-model="nationality" required placeholder="<%= global.lang.nationality %>">
+            </div>
+            <div class="col-lg-5 free_page">
+                <input type="email" class="form-control" name="email" ng-minlength="8" ng-maxlength="30"
+                       ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i"
+                       ng-model="email" required placeholder="<%= global.lang.email %>">
+                <input type="text" class="form-control" name="phone" ng-minlength="8" ng-maxlength="30" ng-pattern="/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{3})/" ng-model="phone" required  placeholder="<%= global.lang.phoneNumber %>">
+                <input type="text" class="form-control" name="site" ng-minlength="8" ng-maxlength="30" ng-pattern="/^(http\:\/\/|https\:\/\/)?([a-z0-9][a-z0-9\-]*\.)+[a-z0-9][a-z0-9\-]*$/" ng-model="site" required  placeholder="<%= global.lang.web %>">
+                <input type="text" class="form-control" name="address" ng-minlength="3" ng-maxlength="30" ng-pattern="/[A-Za-zա-ֆа-я0-9'\.\-\s\,]/i" ng-model="address" required  placeholder="<%= global.lang.address %>">
+            </div>
+            <button ng-disabled="myForm.$invalid" type="button" class="btn btn-info btn-lg" id="preview"><%= global.lang.preview %></button>
+        </form>
         <!--<button onclick="javascript:demoFromHTML()">PDF</button>-->
         <!--<div id="editor"></div>-->
         <!--<button id="cmd">generate PDF</button>-->
@@ -22,85 +26,89 @@
                     href="/<%= language %>/login"><%= global.lang.login %></a> <%= global.lang.photo %></p>
         <p><a href="/<%= language %>"><%= global.lang.home %></a></p>
     </div>
-    <div class="main_div" style="background: yellow!important;position: absolute;z-index: 55;display:none;opacity: 0.5">
-    <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 div bounceInLeft animated">
-        <table class="div" id="basic-table" style="width: 100%">
-            <tr class="oneTr">
-                <td class="col-xs-6">
-                    <h2>Resume of <br/><span class="firstName"></span> <span class="lastName"></span></h2>
-                </td>
-                <td class="col-xs-6"><i class="fa fa-times fa-3x close_button pull-right" aria-hidden="true"></i></td>
-            </tr>
-            <tr class="oneTr">
-                <td class="col-xs-12" colspan="2">
-                    <h3>Personal Information</h3>
-                </td>
-            </tr>
-            <tr class="tooTr">
-                <td class="col-xs-6">
-                    <p>Name: </p>
-                </td>
-                <td class="col-xs-6">
-                    <p class="firstName"></p>
-                </td>
-            </tr>
-            <tr class="oneTr">
-                <td class="col-xs-6">
-                    <p>Last Name: </p>
-                </td>
-                <td class="col-xs-6">
-                    <p class="lastName"></p>
-                </td>
-            </tr>
-            <tr class="tooTr">
-                <td class="col-xs-6">
-                    <p>Date Of Birth: </p>
-                </td>
-                <td class="col-xs-6">
-                    <p class="dob"></p>
-                </td>
-            </tr>
-            <tr class="oneTr">
-                <td class="col-xs-6">
-                    <p>Nationality: </p>
-                </td>
-                <td class="col-xs-6">
-                    <p class="nationality"></p>
-                </td>
-            </tr>
-            <tr class="tooTr">
-                <td class="col-xs-6">
-                    <p>Email: </p>
-                </td>
-                <td class="col-xs-6">
-                    <p class="email"></p>
-                </td>
-            </tr>
-            <tr class="oneTr">
-                <td class="col-xs-6">
-                    <p>Phone Number: </p>
-                </td>
-                <td class="col-xs-6">
-                    <p class="phone"></p>
-                </td>
-            </tr>
-            <tr class="tooTr">
-                <td class="col-xs-6">
-                    <p>Site: </p>
-                </td>
-                <td class="col-xs-6">
-                    <p class="site"></p>
-                </td>
-            </tr>
-            <tr class="oneTr">
-                <td class="col-xs-6">
-                    <p>Address: </p>
-                </td>
-                <td class="col-xs-6">
-                    <p class="address"></p>
-                </td>
-            </tr>
-        </table>
-    </div>
+    <div class="main_div">
+        <div id="pdf2htmldiv"
+             class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 div bounceInLeft animated">
+            <table class="div" id="basic-table" style="width: 100%">
+                <tr class="oneTr">
+                    <td class="col-xs-6">
+                        <h2><%= global.lang.resume %> <br/><span class="firstName"></span> <span
+                                    class="lastName"></span></h2>
+                    </td>
+                    <td class="col-xs-6"><i class="fa fa-times fa-3x close_button pull-right" aria-hidden="true"></i>
+                    </td>
+                </tr>
+                <tr class="oneTr">
+                    <td class="col-xs-12" colspan="2">
+                        <h3><%= global.lang.personalInfo %></h3>
+                    </td>
+                </tr>
+                <tr class="tooTr">
+                    <td class="col-xs-6">
+                        <p><%= global.lang.name %>: </p>
+                    </td>
+                    <td class="col-xs-6">
+                        <p class="firstName"></p>
+                    </td>
+                </tr>
+                <tr class="oneTr">
+                    <td class="col-xs-6">
+                        <p><%= global.lang.lastName %>: </p>
+                    </td>
+                    <td class="col-xs-6">
+                        <p class="lastName"></p>
+                    </td>
+                </tr>
+                <tr class="tooTr">
+                    <td class="col-xs-6">
+                        <p><%= global.lang.date %>: </p>
+                    </td>
+                    <td class="col-xs-6">
+                        <p class="dob"></p>
+                    </td>
+                </tr>
+                <tr class="oneTr">
+                    <td class="col-xs-6">
+                        <p><%= global.lang.nationality %>: </p>
+                    </td>
+                    <td class="col-xs-6">
+                        <p class="nationality"></p>
+                    </td>
+                </tr>
+                <tr class="tooTr">
+                    <td class="col-xs-6">
+                        <p><%= global.lang.email %>: </p>
+                    </td>
+                    <td class="col-xs-6">
+                        <p class="email"></p>
+                    </td>
+                </tr>
+                <tr class="oneTr">
+                    <td class="col-xs-6">
+                        <p><%= global.lang.phoneNumber %>: </p>
+                    </td>
+                    <td class="col-xs-6">
+                        <p class="phone"></p>
+                    </td>
+                </tr>
+                <tr class="tooTr">
+                    <td class="col-xs-6">
+                        <p><%= global.lang.web %>: </p>
+                    </td>
+                    <td class="col-xs-6">
+                        <p class="site"></p>
+                    </td>
+                </tr>
+                <tr class="oneTr">
+                    <td class="col-xs-6">
+                        <p><%= global.lang.address %>: </p>
+                    </td>
+                    <td class="col-xs-6">
+                        <p class="address"></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <a style="position: absolute;z-index: 88855;color:red" href="javascript:pdfToHTML()">Save</a>
     </div>
 </div>

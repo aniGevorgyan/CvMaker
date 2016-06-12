@@ -1,7 +1,5 @@
 /* Main page css */
-button{
-    outline: none!important;
-}
+
 body,
 .container-fluid,
 .row {
@@ -66,8 +64,15 @@ nav a:hover, .content_1 a:hover {
     margin-top: 100px;
     line-height: 30px;
 }
+.main_div{
+    background: linear-gradient(rgba(24, 66, 108, 0.8), rgba(24, 66, 108, 0.8));
+    position: absolute;
+    z-index: 55;
+    display:none;
+    /*opacity: 0.5*/
+}
 
-input#round, button[type="submit"] {
+input#round, button[type="submit"],button[type="button"] {
     margin: 20px;
     width: 150px; /*same as the height*/
     height: 60px; /*same as the width*/
@@ -83,10 +88,11 @@ input#round, button[type="submit"] {
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .75);
     -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .75);
     box-shadow: 2px 2px 15px rgba(0, 0, 0, .75);
+    outline: none!important;
 }
 
 /***NOW STYLE THE BUTTON'S HOVER STATE***/
-input#round:hover, button[type="submit"]:hover {
+input#round:hover, button[type="submit"]:hover,button[type="button"]:hover {
     background: #206FA7;
     border: 1px solid #206FA7;
     /*reduce the size of the shadow to give a pushed effect*/
@@ -402,6 +408,19 @@ margin-top: 15px;
     background: #ededed
 }
 
+input.ng-invalid-minlength,
+input.ng-invalid-maxlength,
+input.ng-invalid-pattern,
+input.ng-invalid-email
+{
+    border: 3px solid red;
+    background:white url(../images/noCheck.png) no-repeat right center;
+}
+
+input.ng-valid {
+    border: 3px solid green;
+    background:white url(../images/Check.png) no-repeat right center;
+}
 
 
 @media screen and (max-width: 769px) {

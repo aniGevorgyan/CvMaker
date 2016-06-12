@@ -11,10 +11,9 @@ $(document).ready(function () {
 
     $('#preview').click(function () {
         $('.div').removeClass('bounceOutLeft').addClass('bounceInLeft').show();
-        $('.main_div').show();
-        $('.main_div').css('height',page_height-50+"px");
-        $('.main_div').css('width',page_width-30+"px");
-        $('').css('background','red');
+        $('.main_div').css('height', page_height - 50 + "px");
+        $('.main_div').css('width', page_width - 30 + "px").show();
+        $('').css('background', 'red');
         infoFromInputs("firstName");
         infoFromInputs("lastName");
         infoFromInputs("dob");
@@ -26,7 +25,12 @@ $(document).ready(function () {
     });
     $('.close_button').click(function () {
         $('.div').removeClass('bounceInLeft').addClass('bounceOutLeft');
-        setTimeout(function(){$('.div').hide()}, 1500);
+        setTimeout(function () {
+            $('.div').hide()
+        }, 1500);
+        setTimeout(function () {
+            $('.main_div').hide()
+        }, 1500);
     });
 
     var doc = new jsPDF();
@@ -43,4 +47,16 @@ $(document).ready(function () {
         });
         doc.save('sample-file.pdf');
     });
+});
+
+var validationApp = angular.module('myApp', []);
+
+validationApp.controller('validateCtrl', function($scope) {
+    $scope.submitForm = function() {
+        if ($scope.myForm.$valid) {
+            // alert('our form is amazing');
+        }
+
+    };
+
 });

@@ -25,7 +25,8 @@ var translations = {
     home:'Home',
     logAccount:'Need an account?',
     photo:'for upload photo.',
-    please:'Please'
+    please:'Please',
+    resume:'Resume of'
 
 
 
