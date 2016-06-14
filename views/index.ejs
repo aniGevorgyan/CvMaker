@@ -1,6 +1,6 @@
 <% layout('layout/page') %>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content_1">
-    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12" id="main_content">
         <h3 class="bounceInLeft animated"><%= global.lang.head %></h3>
 
         <h3 class="bounceInRight animated"><%= global.lang.head1 %></h3>
@@ -12,9 +12,65 @@
     </div>
     <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 content_2">
         <h2><%= global.lang.selection%></h2>
-        <img src="/images/cv-template-avant.png" alt="img_1"/>
-        <img src="/images/cv-template-brooklyn.png" alt="img_2"/>
-        <img src="/images/cv-template-online-resume-verge.png" alt="img_3"/>
+        <!--<img src="/images/cv-template-avant.png" alt="img_1"/>-->
+        <!--<img src="/images/cv-template-brooklyn.png" alt="img_2"/>-->
+        <!--<img src="/images/cv-template-online-resume-verge.png" alt="img_3"/>-->
+        <div class="flipbook-viewport">
+            <div class="container">
+                <div class="flipbook">
+                    <div style="background-image:url(/images/thumbnail.7a1bee18eaa2.png)"></div>
+                    <div style="background-image:url(/images/thumbnail.5aa52f04cf2e.png)"></div>
+                    <div style="background-image:url(/images/thumbnail.8a003f49b635.png)"></div>
+                    <div style="background-image:url(/images/thumbnail.25c8b741cca6.png)"></div>
+                    <div style="background-image:url(/images/thumbnail.327d476fcf0c.png)"></div>
+                    <div style="background-image:url(/images/thumbnail.a0a26751ca76.png)"></div>
+                    <div style="background-image:url(/images/thumbnail.6663b1d352a0.png)"></div>
+                    <div style="background-image:url(/images/thumbnail.a96378985e85.png)"></div>
+                    <div style="background-image:url(/images/thumbnail.fa300e2240fe.png)"></div>
+                    <div style="background-image:url(/images/thumbnail.5aa52f04cf2e.png)"></div>
+                    <div style="background-image:url(/images/thumbnail.8a003f49b635.png)"></div>
+                </div>
+            </div>
+        </div>
         <div class="brands"></div>
+        <script type="text/javascript">
+
+            function loadApp() {
+
+                // Create the flipbook
+
+                $('.flipbook').turn({
+                    // Width
+
+                    width:1000,
+
+                    // Height
+
+                    height:707,
+
+                    // Elevation
+
+                    elevation: 50,
+
+                    // Enable gradients
+
+                    gradients: true,
+
+                    // Auto center this flipbook
+
+                    autoCenter: true
+
+                });
+            }
+
+            // Load the HTML4 version if there's not CSS transform
+
+            yepnope({
+                test : Modernizr.csstransforms,
+                yep: ['/js/lib/turn.js'],
+                complete: loadApp
+            });
+
+        </script>
     </div>
 </div>

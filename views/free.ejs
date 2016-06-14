@@ -29,86 +29,87 @@
     <div class="main_div">
         <div id="pdf2htmldiv"
              class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 div bounceInLeft animated">
-            <table class="div" id="basic-table" style="width: 100%">
-                <tr class="oneTr">
-                    <td class="col-xs-6">
+            <div class="div" id="basic-table" style="width: 100%;background: white">
+                <div class="oneTr">
+                    <div class="col-xs-6">
                         <h2><%= global.lang.resume %> <br/><span class="firstName"></span> <span
                                     class="lastName"></span></h2>
-                    </td>
-                    <td class="col-xs-6"><i class="fa fa-times fa-3x close_button pull-right" aria-hidden="true"></i>
-                    </td>
-                </tr>
-                <tr class="oneTr">
-                    <td class="col-xs-12" colspan="2">
+                    </div>
+                    <div class="col-xs-6"><i class="fa fa-times fa-3x close_button pull-right" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="oneTr">
+                    <div class="col-xs-12" colspan="2">
                         <h3><%= global.lang.personalInfo %></h3>
-                    </td>
-                </tr>
-                <tr class="tooTr">
-                    <td class="col-xs-6">
+                    </div>
+                </div>
+                <div class="tooTr">
+                    <div class="col-xs-6">
                         <p><%= global.lang.name %>: </p>
-                    </td>
-                    <td class="col-xs-6">
+                    </div>
+                    <div class="col-xs-5">
                         <p class="firstName"></p>
-                    </td>
-                </tr>
-                <tr class="oneTr">
-                    <td class="col-xs-6">
+                    </div>
+                </div>
+                <div class="oneTr">
+                    <div class="col-xs-6">
                         <p><%= global.lang.lastName %>: </p>
-                    </td>
-                    <td class="col-xs-6">
+                    </div>
+                    <div class="col-xs-5">
                         <p class="lastName"></p>
-                    </td>
-                </tr>
-                <tr class="tooTr">
-                    <td class="col-xs-6">
+                    </div>
+                </div>
+                <div class="tooTr">
+                    <div class="col-xs-6">
                         <p><%= global.lang.date %>: </p>
-                    </td>
-                    <td class="col-xs-6">
+                    </div>
+                    <div class="col-xs-6">
                         <p class="dob"></p>
-                    </td>
-                </tr>
-                <tr class="oneTr">
-                    <td class="col-xs-6">
+                    </div>
+                </div>
+                <div class="oneTr">
+                    <div class="col-xs-6">
                         <p><%= global.lang.nationality %>: </p>
-                    </td>
-                    <td class="col-xs-6">
+                    </div>
+                    <div class="col-xs-6">
                         <p class="nationality"></p>
-                    </td>
-                </tr>
-                <tr class="tooTr">
-                    <td class="col-xs-6">
+                    </div>
+                </div>
+                <div class="tooTr">
+                    <div class="col-xs-6">
                         <p><%= global.lang.email %>: </p>
-                    </td>
-                    <td class="col-xs-6">
+                    </div>
+                    <div class="col-xs-6">
                         <p class="email"></p>
-                    </td>
-                </tr>
-                <tr class="oneTr">
-                    <td class="col-xs-6">
+                    </div>
+                </div>
+                <div class="oneTr">
+                    <div class="col-xs-6">
                         <p><%= global.lang.phoneNumber %>: </p>
-                    </td>
-                    <td class="col-xs-6">
+                    </div>
+                    <div class="col-xs-6">
                         <p class="phone"></p>
-                    </td>
-                </tr>
-                <tr class="tooTr">
-                    <td class="col-xs-6">
+                    </div>
+                </div>
+                <div class="tooTr">
+                    <div class="col-xs-6">
                         <p><%= global.lang.web %>: </p>
-                    </td>
-                    <td class="col-xs-6">
+                    </div>
+                    <div class="col-xs-6">
                         <p class="site"></p>
-                    </td>
-                </tr>
-                <tr class="oneTr">
-                    <td class="col-xs-6">
+                    </div>
+                </div>
+                <div class="oneTr">
+                    <div class="col-xs-6">
                         <p><%= global.lang.address %>: </p>
-                    </td>
-                    <td class="col-xs-6">
+                    </div>
+                    <div class="col-xs-6">
                         <p class="address"></p>
-                    </td>
-                </tr>
-            </table>
+                    </div>
+                </div>
+            </div>
         </div>
-        <a style="position: absolute;z-index: 88855;color:red" href="javascript:pdfToHTML()">Save</a>
+        <button type="button" onclick="javascript:pdfToHTML()" class="btn btn-info btn-lg">Download</button><br/>
+        <button type="button"  class="btn btn-info btn-lg" id="edit">Edit</button>
     </div>
 </div>

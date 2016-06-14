@@ -23,7 +23,8 @@ $(document).ready(function () {
         infoFromInputs("site");
         infoFromInputs("address");
     });
-    $('.close_button').click(function () {
+
+    function closePrewiev(){
         $('.div').removeClass('bounceInLeft').addClass('bounceOutLeft');
         setTimeout(function () {
             $('.div').hide()
@@ -31,21 +32,12 @@ $(document).ready(function () {
         setTimeout(function () {
             $('.main_div').hide()
         }, 1500);
+    }
+    $('.close_button').click(function () {
+       closePrewiev();
     });
-
-    var doc = new jsPDF();
-    var specialElementHandlers = {
-        '#editor': function (element, renderer) {
-            return true;
-        }
-    };
-
-    $('#cmd').click(function () {
-        doc.fromHTML($('.div').html(), 15, 15, {
-            'width': 170,
-            'elementHandlers': specialElementHandlers
-        });
-        doc.save('sample-file.pdf');
+    $('#edit').click(function () {
+        closePrewiev();
     });
 });
 
