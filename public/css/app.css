@@ -73,7 +73,7 @@ nav a:hover, .content_1 a:hover {
     /*opacity: 0.5*/
 }
 
-input#round, button[type="submit"], button[type="button"] {
+input#round, button[type="submit"], button[type="button"], #logout_button {
     margin: 20px;
     width: 150px; /*same as the height*/
     height: 60px; /*same as the width*/
@@ -93,7 +93,7 @@ input#round, button[type="submit"], button[type="button"] {
 }
 
 /***NOW STYLE THE BUTTON'S HOVER STATE***/
-input#round:hover, button[type="submit"]:hover, button[type="button"]:hover {
+input#round:hover, button[type="submit"]:hover, button[type="button"]:hover, #logout_button:hover {
     background: #206FA7;
     border: 1px solid #206FA7;
     /*reduce the size of the shadow to give a pushed effect*/
@@ -485,6 +485,94 @@ input.ng-valid {
     -o-box-shadow:0 0 20px #ccc;
     -ms-box-shadow:0 0 20px #ccc;
     box-shadow:0 0 20px #ccc;
+}
+
+
+main {
+    width: 100%;
+    padding: 50px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    background:linear-gradient(rgba(0, 107, 179, 0.9), rgba(0, 107, 179, 0.9));
+}
+
+main input {
+    display: none;
+}
+
+section {
+    display: none;
+    padding: 20px 0 0;
+    border-top: 1px solid #fff;
+}
+
+label {
+    display: inline-block;
+    margin: 0 0 -1px;
+    padding: 15px 25px;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    border: 1px solid transparent;
+}
+
+label:before {
+    font-family: fontawesome;
+    font-weight: normal;
+    margin-right: 10px;
+}
+
+label[for*='1']:before {
+    content: "\f129";
+}
+
+label[for*='2']:before {
+    content:  "\f02d";
+}
+
+label[for*='3']:before {
+    content:  "\f108";
+}
+
+label[for*='4']:before {
+    content: "\f209";
+}
+
+label:hover {
+    color: #eee;
+    cursor: pointer;
+}
+
+input:checked + label {
+    color: #eee;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-top: 3px solid #fff;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid #006BB3;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+    display: block;
+}
+
+@media screen and (max-width: 650px) {
+    label {
+        font-size: 0;
+    }
+
+    label:before {
+        margin: 0;
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 400px) {
+    label {
+        padding: 15px;
+    }
 }
 
 @media screen and (max-width: 769px) {

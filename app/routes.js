@@ -24,7 +24,7 @@ module.exports = function(app, passport){
 		});
 	});
 	app.post('/login', passport.authenticate('local-login', {
-		successRedirect: '/profile',
+		successRedirect: 'en/profile',
 		failureRedirect: 'en/login',
 		failureFlash: true
 	}));
@@ -44,11 +44,19 @@ module.exports = function(app, passport){
 		failureFlash: true
 	}));
 
-	app.get('/profile', isLoggedIn, function(req, res){
+	app.get('/:lang(' + languages + ')/profile', isLoggedIn, function(req, res){
 		global.i18n.setLanguage(req.params.lang);
 		res.render('profile.ejs', {
+			language: req.params.lang,
 			user: req.user,
-			originalUrl: '/profile'
+			originalUrl: 'profile'
+		});
+	});
+
+	app.get('/profile', isLoggedIn, function(req, res){
+		res.render('profile.ejs', {
+			user: req.user,
+			originalUrl: 'profile'
 		});
 	});
 
