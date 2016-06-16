@@ -73,7 +73,7 @@ nav a:hover, .content_1 a:hover {
     /*opacity: 0.5*/
 }
 
-input#round, button[type="submit"], button[type="button"], #logout_button {
+input#round, button[type="submit"], button[type="button"] {
     margin: 20px;
     width: 150px; /*same as the height*/
     height: 60px; /*same as the width*/
@@ -92,8 +92,14 @@ input#round, button[type="submit"], button[type="button"], #logout_button {
     outline: none !important;
 }
 
+#logout_button {
+    margin: 20px;
+    color: #fff;
+    font-size: 1.6em;
+}
+
 /***NOW STYLE THE BUTTON'S HOVER STATE***/
-input#round:hover, button[type="submit"]:hover, button[type="button"]:hover, #logout_button:hover {
+input#round:hover, button[type="submit"]:hover, button[type="button"]:hover {
     background: #206FA7;
     border: 1px solid #206FA7;
     /*reduce the size of the shadow to give a pushed effect*/
@@ -438,62 +444,60 @@ input.ng-valid {
     background: white url(../images/Check.png) no-repeat right center;
 }
 
-.flipbook-viewport{
-    overflow:hidden;
-    width:100%;
-    height:100%;
+.flipbook-viewport {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
 
-.flipbook-viewport .container{
-    margin:10px auto;
+.flipbook-viewport .container {
+    margin: 10px auto;
 }
 
-.flipbook-viewport .page{
-    width:300px;
-    height:500px;
-    background-color:white;
-    background-repeat:no-repeat;
-    background-size:100% 100%;
+.flipbook-viewport .page {
+    width: 300px;
+    height: 500px;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
-.flipbook .page{
-    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.2);
-    -moz-box-shadow:0 0 20px rgba(0,0,0,0.2);
-    -ms-box-shadow:0 0 20px rgba(0,0,0,0.2);
-    -o-box-shadow:0 0 20px rgba(0,0,0,0.2);
-    box-shadow:0 0 20px rgba(0,0,0,0.2);
+.flipbook .page {
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.flipbook-viewport .page img{
+.flipbook-viewport .page img {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    margin:0;
+    margin: 0;
 }
 
-.flipbook-viewport .shadow{
+.flipbook-viewport .shadow {
     -webkit-transition: -webkit-box-shadow 0.5s;
     -moz-transition: -moz-box-shadow 0.5s;
     -o-transition: -webkit-box-shadow 0.5s;
     -ms-transition: -ms-box-shadow 0.5s;
 
-    -webkit-box-shadow:0 0 20px #ccc;
-    -moz-box-shadow:0 0 20px #ccc;
-    -o-box-shadow:0 0 20px #ccc;
-    -ms-box-shadow:0 0 20px #ccc;
-    box-shadow:0 0 20px #ccc;
+    -webkit-box-shadow: 0 0 20px #ccc;
+    -moz-box-shadow: 0 0 20px #ccc;
+    -o-box-shadow: 0 0 20px #ccc;
+    -ms-box-shadow: 0 0 20px #ccc;
+    box-shadow: 0 0 20px #ccc;
 }
-
 
 main {
     width: 100%;
     padding: 50px;
-    margin: 0 auto;
-    margin-bottom: 100px;
-    background:linear-gradient(rgba(0, 107, 179, 0.9), rgba(0, 107, 179, 0.9));
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 1);
 }
 
 main input {
@@ -503,7 +507,9 @@ main input {
 section {
     display: none;
     padding: 20px 0 0;
-    border-top: 1px solid #fff;
+    border-top: 1px solid #B2C0CE;
+    min-height: 200px;
+    overflow: hidden;
 }
 
 label {
@@ -512,7 +518,7 @@ label {
     padding: 15px 25px;
     font-size: 18px;
     text-align: center;
-    color: #fff;
+    color: #006BB3;
     border: 1px solid transparent;
 }
 
@@ -522,16 +528,20 @@ label:before {
     margin-right: 10px;
 }
 
+label[for*='0']:before {
+    content: "\f0c5";
+}
+
 label[for*='1']:before {
     content: "\f129";
 }
 
 label[for*='2']:before {
-    content:  "\f02d";
+    content: "\f02d";
 }
 
 label[for*='3']:before {
-    content:  "\f108";
+    content: "\f108";
 }
 
 label[for*='4']:before {
@@ -539,25 +549,109 @@ label[for*='4']:before {
 }
 
 label:hover {
-    color: #eee;
+    color: #02547A;
     cursor: pointer;
 }
 
 input:checked + label {
-    color: #eee;
-    border-right: 1px solid #fff;
-    border-left: 1px solid #fff;
-    border-top: 3px solid #fff;
+    color: #02547A;
+    border-right: 1px solid #B2C0CE;
+    border-left: 1px solid #B2C0CE;
+    border-top: 3px solid #02547A;
     border-radius: 5px 5px 0 0;
-    border-bottom: 1px solid #006BB3;
+    border-bottom: 1px solid #fff;
 }
 
+#tab0:checked ~ #content0,
 #tab1:checked ~ #content1,
 #tab2:checked ~ #content2,
 #tab3:checked ~ #content3,
 #tab4:checked ~ #content4 {
     display: block;
 }
+
+.templates {
+    width: 220px;
+    height: 300px;
+    border: 1px solid #B2C0CE;
+    margin: 0 50px 30px 0;
+    float: left;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+#template_1{
+    background-image: url(../images/1.png);
+    background-size: cover;
+}
+#template_1:hover{
+    background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/1.png);
+    background-size: cover;
+}
+
+#template_2{
+    background-image: url(../images/6.png);
+    background-size: cover;
+}
+#template_2:hover{
+    background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/6.png);
+    background-size: cover;
+}
+
+#template_3{
+    background-image: url(../images/9.png);
+    background-size: cover;
+}
+#template_3:hover{
+    background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/9.png);
+    background-size: cover;
+}
+
+#template_4{
+    background-image: url(../images/2.png);
+    background-size: cover;
+}
+#template_4:hover{
+    background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/2.png);
+    background-size: cover;
+}
+
+#template_5{
+    background-image: url(../images/3.png);
+    background-size: cover;
+}
+#template_5:hover{
+    background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/3.png);
+    background-size: cover;
+}
+
+#template_6{
+    background-image: url(../images/4.png);
+    background-size: cover;
+}
+#template_6:hover{
+    background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/4.png);
+    background-size: cover;
+}
+
+#template_7{
+    background-image: url(../images/5.png);
+    background-size: cover;
+}
+#template_7:hover{
+    background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/5.png);
+    background-size: cover;
+}
+
+#template_8{
+    background-image: url(../images/7.png);
+    background-size: cover;
+}
+#template_8:hover{
+    background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/7.png);
+    background-size: cover;
+}
+
 
 @media screen and (max-width: 650px) {
     label {
@@ -569,6 +663,7 @@ input:checked + label {
         font-size: 18px;
     }
 }
+
 @media screen and (max-width: 400px) {
     label {
         padding: 15px;
