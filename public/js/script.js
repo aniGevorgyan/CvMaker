@@ -8,6 +8,10 @@ $(document).ready(function () {
         var input = $("input[name=" + infoFromTo + "]").val();
         $("." + infoFromTo + "").text(input);
     }
+    function infoFromCheckedInputs(infoFromTo) {
+        var input = $("input[name=" + infoFromTo + "]:checked").val();
+        $("." + infoFromTo + "").text(input);
+    }
 
     $('#preview').click(function () {
         $('.div').removeClass('bounceOutLeft').addClass('bounceInLeft').show();
@@ -20,7 +24,7 @@ $(document).ready(function () {
         infoFromInputs("nationality");
         infoFromInputs("email");
         infoFromInputs("phone");
-        infoFromInputs("site");
+        infoFromCheckedInputs("gender");
         infoFromInputs("address");
     });
 

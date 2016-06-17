@@ -10,7 +10,9 @@ var translations = {
     nationality: 'Ազգություն',
     email: 'էլ. փոստ',
     phoneNumber: 'Հեռախոսահամար',
-    web: "Կայք",
+    gender: "Սեռ",
+    male: "Արական",
+    female:"Իգական",
     address: 'Հասցե',
     copy: 'ArmCv &copy; 2016.Բոլոր իրավունքները պաշտպանված են:',
     tryFree: 'Անվճար',
@@ -26,7 +28,9 @@ var translations = {
     logAccount: 'Ուզում եք գրանցվել?',
     photo:'գործել,որպեսզի ավելացնել  լուսանկար',
     please:'Խնդրում ենք ',
-    resume:'Ռեզյումե'
+    resume:'Ռեզյումե',
+    download:'Ներբեռնել',
+    edit: 'Խմբագրել',
 
 };
 

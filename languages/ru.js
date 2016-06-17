@@ -13,7 +13,9 @@ var translations = {
     nationality: 'Национальность',
     email: 'Электронная почта',
     phoneNumber: 'Номер телефона',
-    web: "Сайт",
+    gender: "Пол",
+    male: "Мужской",
+    female:"Женский",
     address: 'Адрес',
     copy: 'ArmCv &copy; 2016.Все права защищены.',
     tryFree: 'Бесплатно',
@@ -29,8 +31,9 @@ var translations = {
     logAccount:'Нужна учетная запись?',
     photo:'для добавление фото.',
     please:'Пожалуйста',
-    resume:'Резюме'
-
+    resume:'Резюме',
+    download:'Скачать',
+    edit: 'Редактировать',
 };
 
 module.exports = translations;

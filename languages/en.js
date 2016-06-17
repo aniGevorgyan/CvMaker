@@ -10,7 +10,9 @@ var translations = {
     nationality: 'Nationality',
     email: 'Email',
     phoneNumber: 'Phone Number',
-    web: "Site",
+    gender: "Gender",
+    male: "Male",
+    female:"Female",
     address: 'Address',
     copy: 'ArmCv &copy; 2016. All Rights Reserved.',
     tryFree: 'Free',
@@ -26,11 +28,9 @@ var translations = {
     logAccount:'Need an account?',
     photo:'for upload photo.',
     please:'Please',
-    resume:'Resume of'
-
-
-
-
+    resume:'Resume of',
+    download:'Download',
+    edit: 'Edit',
 };
 
 module.exports = translations;
