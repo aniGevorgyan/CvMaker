@@ -398,6 +398,7 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 .div h3 {
     text-align: center;
+    font-size: 30px;
 }
 
 .div h2 {
@@ -405,9 +406,18 @@ input[type="text"], input[type="email"], input[type="password"] {
 }
 
 .div div div:first-child p {
-    margin-left: 30%;
+    text-align: left;
+    margin-left: 120px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
+}
+
+.div div div p span {
+    /*text-align: center;*/
+    /*margin-left: 30%;*/
+    font-weight: 200;
+    font-size: 18px;
+    margin-left: 10px;
 }
 
 .img {
