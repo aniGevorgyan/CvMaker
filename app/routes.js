@@ -1,5 +1,6 @@
 var User = require('./models/user');
 var languages = global.config.application.languages;
+var multer	=	require('multer');
 
 module.exports = function(app, passport){
 	app.get('/:lang(' + languages + ')', function(req, res) {
@@ -78,8 +79,33 @@ module.exports = function(app, passport){
 	app.get('/logout', function(req, res){
 		req.logout();
 		res.redirect('en/');
-	})
+	});
+
+	var storage	=	multer.diskStorage({
+		destination: function (req, file, callback) {
+			callback(null, './public/uploads');
+		},
+		filename: function (req, file, callback) {
+			callback(null, file.originalname);
+		}
+	});
+
+	var upload = multer({ storage : storage}).single('userPhoto');
+
+	app.post('/api/photo',function(req,res){
+		upload(req,res,function(err) {
+			if(err) {
+				return res.end("Error uploading file.");
+			}
+			// res.end(req.file.path);
+			res.end(req.file.path);
+			console.log(req.file.path);
+
+		});
+	});
 };
+
+
 
 function isLoggedIn(req, res, next) {
 	if(req.isAuthenticated()){
