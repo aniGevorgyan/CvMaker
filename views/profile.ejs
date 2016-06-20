@@ -1,5 +1,70 @@
 <% layout('layout/page') %>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content_login">
+    <div class="main_div">
+        <div id="pdf2htmldiv"
+             class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 div bounceInLeft animated">
+            <div class="templates main-template" id="basic-table">
+                <div class="">
+                    <div class="col-xs-6">
+                        <img src="/images/papskok.png" class="profile_image"/>
+                        <span class="firstName"></span>
+                        <span class="lastName"></span>
+                    </div>
+                    <div class="col-xs-6"><i class="fa fa-times fa-3x close_button pull-right" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="tooTr">
+                    <div class="col-xs-4 cv_parts">
+                        <img src="/images/personal.png"><br/>
+                        <span class="spanText">Personal info</span>
+                    </div>
+                    <div class="col-xs-4 cv_parts_2">
+                        <p>First name: <span class="firstName"></span></p>
+                        <p>Last name: <span class="lastName"></span> </p>
+                        <p>Date of birth: <span class="dob"></span> </p>
+                        <p>Nationality: <span class="nationality"></span> </p>
+                    </div>
+                    <div class="col-xs-4 cv_parts_3">
+                        <p>Email address: <span class="email"></span></p>
+                        <p>Phone Number: <span class="phone"></span> </p>
+                        <p>Address: <span class="address"></span> </p>
+                    </div>
+                </div>
+                <div class="oneTr">
+                    <div class="col-xs-4 cv_parts">
+                        <img src="/images/uchoba.png"><br/>
+                        <span class="spanText">Education</span>
+                    </div>
+                    <div class="col-xs-8" style="color:red">esdrghjdfghsdfgh</div>
+                </div>
+                <div class="tooTr">
+                    <div class="col-xs-4 cv_parts">
+                        <img src="/images/work.png"><br/>
+                        <span class="spanText">Work experience</span>
+                    </div>
+                    <div class="col-xs-8">esdrghjdfghsdfgh</div>
+                </div>
+                <div class="oneTr">
+                    <div class="col-xs-4 cv_parts">
+                        <img src="/images/skills.png"><br/>
+                        <span class="spanText">Skills</span>
+                    </div>
+                    <div class="col-xs-8" style="color:red">esdrghjdfghsdfgh</div>
+                </div>
+                <div class="tooTr">
+                    <div class="col-xs-4 cv_parts">
+                        <img src="/images/hobbies.png"><br/>
+                        <span class="spanText">Hobbies</span>
+                    </div>
+                    <div class="col-xs-8" style="color:red">esdrghjdfghsdfgh</div>
+                </div>
+            </div>
+        </div>
+        <button type="button" onclick="javascript:pdfToHTML()"
+                class="btn btn-info btn-lg"><%= global.lang.download %></button>
+        <br/>
+        <button type="button" class="btn btn-info btn-lg" id="edit"><%= global.lang.edit %></button>
+    </div>
     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
         <h3><span class="fa fa-user"></span> Welcome <span>
                 <% if(user.local.username){ %>
@@ -45,82 +110,90 @@
             <section id="content1">
                 <form name="myForm" novalidate>
                     <div class="col-lg-5 col-lg-offset-1 free_page">
-                        <input type="text" class="form-control" name="firstName" ng-model="firstName" ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"  placeholder="<%= global.lang.name %>" required>
-                        <input type="text" class="form-control" name="lastName" ng-minlength="3" ng-maxlength="20" ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-model="lastName" required placeholder="<%= global.lang.lastName %>">
-                        <input type="text" class="form-control" name="dob" ng-minlength="3" ng-maxlength="20" ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="dob" required placeholder="<%= global.lang.date %> (YYYY-MM-DD)">
-                        <input type="text" class="form-control" name="nationality" ng-minlength="3" ng-maxlength="20" ng-pattern="/[a-zա-ֆа-я]{3,20}/i" ng-model="nationality" required placeholder="<%= global.lang.nationality %>">
+                        <label id="gender"><input type="radio" name="gender" ng-model="site"
+                                                  value="<%= global.lang.male %>"/><i></i> <%= global.lang.male %>
+                        </label>
+                        <label id="gender"> <input type="radio" name="gender" value="<%= global.lang.female %>"
+                                                   ng-model="ttt"/><i></i> <%= global.lang.female %></label>
+                        <input type="text" class="form-control" name="firstName" ng-model="firstName"
+                               ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
+                               placeholder="<%= global.lang.name %>" required>
+                        <input type="text" class="form-control" name="lastName" ng-minlength="3" ng-maxlength="20"
+                               ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-model="lastName" required
+                               placeholder="<%= global.lang.lastName %>">
+                        <input type="text" class="form-control" name="dob" ng-minlength="3" ng-maxlength="20"
+                               ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="dob"
+                               required placeholder="<%= global.lang.date %> (YYYY-MM-DD)">
                     </div>
                     <div class="col-lg-5 free_page">
+                        <input type="text" class="form-control" name="nationality" ng-minlength="3" ng-maxlength="20"
+                               ng-pattern="/[a-zա-ֆа-я]{3,20}/i" ng-model="nationality" required
+                               placeholder="<%= global.lang.nationality %>">
                         <input type="email" class="form-control" name="email" ng-minlength="8" ng-maxlength="30"
                                ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i"
                                ng-model="email" required placeholder="<%= global.lang.email %>">
-                        <input type="text" class="form-control" name="phone" ng-minlength="8" ng-maxlength="30" ng-pattern="/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{3})/" ng-model="phone" required  placeholder="<%= global.lang.phoneNumber %>">
-                        <input type="text" class="form-control" name="site" ng-minlength="8" ng-maxlength="30" ng-pattern="/^(http\:\/\/|https\:\/\/)?([a-z0-9][a-z0-9\-]*\.)+[a-z0-9][a-z0-9\-]*$/" ng-model="site" required  placeholder="<%= global.lang.web %>">
-                        <input type="text" class="form-control" name="address" ng-minlength="3" ng-maxlength="30" ng-pattern="/[A-Za-zա-ֆа-я0-9'\.\-\s\,]/i" ng-model="address" required  placeholder="<%= global.lang.address %>">
+                        <input type="text" class="form-control" name="phone" ng-minlength="8" ng-maxlength="30"
+                               ng-pattern="/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{3})/" ng-model="phone" required
+                               placeholder="<%= global.lang.phoneNumber %>">
+                        <input type="text" class="form-control" name="address" ng-minlength="3" ng-maxlength="30"
+                               ng-pattern="/[A-Za-zա-ֆа-я0-9'\.\-\s\,]/i" ng-model="address" required
+                               placeholder="<%= global.lang.address %>">
                     </div>
-                    <button ng-disabled="myForm.$invalid" type="button" class="btn btn-info btn-lg" id="preview"><%= global.lang.preview %></button>
+                    <button type="button" class="btn btn-info btn-lg" id="preview"><%= global.lang.preview %></button>
                 </form>
             </section>
 
             <section id="content2">
                 <p>
-                    Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin ball tip turducken. Pork belly meatball t-bone bresaola tail filet mignon kevin turkey ribeye shank flank doner cow kielbasa shankle. Pig swine chicken hamburger, tenderloin turkey rump ball tip sirloin frankfurter meatloaf boudin brisket ham hock. Hamburger venison brisket tri-tip andouille pork belly ball tip short ribs biltong meatball chuck. Pork chop ribeye tail short ribs, beef hamburger meatball kielbasa rump corned beef porchetta landjaeger flank. Doner rump frankfurter meatball meatloaf, cow kevin pork pork loin venison fatback spare ribs salami beef ribs.
+                    Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin ball tip
+                    turducken. Pork belly meatball t-bone bresaola tail filet mignon kevin turkey ribeye shank flank
+                    doner cow kielbasa shankle. Pig swine chicken hamburger, tenderloin turkey rump ball tip sirloin
+                    frankfurter meatloaf boudin brisket ham hock. Hamburger venison brisket tri-tip andouille pork belly
+                    ball tip short ribs biltong meatball chuck. Pork chop ribeye tail short ribs, beef hamburger
+                    meatball kielbasa rump corned beef porchetta landjaeger flank. Doner rump frankfurter meatball
+                    meatloaf, cow kevin pork pork loin venison fatback spare ribs salami beef ribs.
                 </p>
                 <p>
-                    Jerky jowl pork chop tongue, kielbasa shank venison. Capicola shank pig ribeye leberkas filet mignon brisket beef kevin tenderloin porchetta. Capicola fatback venison shank kielbasa, drumstick ribeye landjaeger beef kevin tail meatball pastrami prosciutto pancetta. Tail kevin spare ribs ground round ham ham hock brisket shoulder. Corned beef tri-tip leberkas flank sausage ham hock filet mignon beef ribs pancetta turkey.
+                    Jerky jowl pork chop tongue, kielbasa shank venison. Capicola shank pig ribeye leberkas filet mignon
+                    brisket beef kevin tenderloin porchetta. Capicola fatback venison shank kielbasa, drumstick ribeye
+                    landjaeger beef kevin tail meatball pastrami prosciutto pancetta. Tail kevin spare ribs ground round
+                    ham ham hock brisket shoulder. Corned beef tri-tip leberkas flank sausage ham hock filet mignon beef
+                    ribs pancetta turkey.
                 </p>
             </section>
 
             <section id="content3">
                 <p>
-                    Bacon ipsum dolor sit amet beef venison beef ribs kielbasa. Sausage pig leberkas, t-bone sirloin shoulder bresaola. Frankfurter rump porchetta ham. Pork belly prosciutto brisket meatloaf short ribs.
+                    Bacon ipsum dolor sit amet beef venison beef ribs kielbasa. Sausage pig leberkas, t-bone sirloin
+                    shoulder bresaola. Frankfurter rump porchetta ham. Pork belly prosciutto brisket meatloaf short
+                    ribs.
                 </p>
                 <p>
-                    Brisket meatball turkey short loin boudin leberkas meatloaf chuck andouille pork loin pastrami spare ribs pancetta rump. Frankfurter corned beef beef tenderloin short loin meatloaf swine ground round venison.
+                    Brisket meatball turkey short loin boudin leberkas meatloaf chuck andouille pork loin pastrami spare
+                    ribs pancetta rump. Frankfurter corned beef beef tenderloin short loin meatloaf swine ground round
+                    venison.
                 </p>
             </section>
 
             <section id="content4">
                 <p>
-                    Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin ball tip turducken. Pork belly meatball t-bone bresaola tail filet mignon kevin turkey ribeye shank flank doner cow kielbasa shankle. Pig swine chicken hamburger, tenderloin turkey rump ball tip sirloin frankfurter meatloaf boudin brisket ham hock. Hamburger venison brisket tri-tip andouille pork belly ball tip short ribs biltong meatball chuck. Pork chop ribeye tail short ribs, beef hamburger meatball kielbasa rump corned beef porchetta landjaeger flank. Doner rump frankfurter meatball meatloaf, cow kevin pork pork loin venison fatback spare ribs salami beef ribs.
+                    Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin ball tip
+                    turducken. Pork belly meatball t-bone bresaola tail filet mignon kevin turkey ribeye shank flank
+                    doner cow kielbasa shankle. Pig swine chicken hamburger, tenderloin turkey rump ball tip sirloin
+                    frankfurter meatloaf boudin brisket ham hock. Hamburger venison brisket tri-tip andouille pork belly
+                    ball tip short ribs biltong meatball chuck. Pork chop ribeye tail short ribs, beef hamburger
+                    meatball kielbasa rump corned beef porchetta landjaeger flank. Doner rump frankfurter meatball
+                    meatloaf, cow kevin pork pork loin venison fatback spare ribs salami beef ribs.
                 </p>
                 <p>
-                    Jerky jowl pork chop tongue, kielbasa shank venison. Capicola shank pig ribeye leberkas filet mignon brisket beef kevin tenderloin porchetta. Capicola fatback venison shank kielbasa, drumstick ribeye landjaeger beef kevin tail meatball pastrami prosciutto pancetta. Tail kevin spare ribs ground round ham ham hock brisket shoulder. Corned beef tri-tip leberkas flank sausage ham hock filet mignon beef ribs pancetta turkey.
+                    Jerky jowl pork chop tongue, kielbasa shank venison. Capicola shank pig ribeye leberkas filet mignon
+                    brisket beef kevin tenderloin porchetta. Capicola fatback venison shank kielbasa, drumstick ribeye
+                    landjaeger beef kevin tail meatball pastrami prosciutto pancetta. Tail kevin spare ribs ground round
+                    ham ham hock brisket shoulder. Corned beef tri-tip leberkas flank sausage ham hock filet mignon beef
+                    ribs pancetta turkey.
                 </p>
             </section>
 
         </main>
-
-        <!--<section class="ac-container">-->
-            <!--<div>-->
-                <!--<input id="ac-1" name="accordion-1" type="checkbox" checked />-->
-                <!--<label for="ac-1">About us</label>-->
-                <!--<article class="ac-small">-->
-                    <!--<p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.</p>-->
-                <!--</article>-->
-            <!--</div>-->
-            <!--<div>-->
-                <!--<input id="ac-2" name="accordion-1" type="checkbox" />-->
-                <!--<label for="ac-2">How we work</label>-->
-                <!--<article class="ac-medium">-->
-                    <!--<p>Like you, I used to think the world was this great place where everybody lived by the same standards I did, then some kid with a nail showed me I was living in his world, a world where chaos rules not order, a world where righteousness is not rewarded. That's Cesar's world, and if you're not willing to play by his rules, then you're gonna have to pay the price. </p>-->
-                <!--</article>-->
-            <!--</div>-->
-            <!--<div>-->
-                <!--<input id="ac-3" name="accordion-1" type="checkbox" />-->
-                <!--<label for="ac-3">References</label>-->
-                <!--<article class="ac-large">-->
-                    <!--<p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man. </p>-->
-                <!--</article>-->
-            <!--</div>-->
-            <!--<div>-->
-                <!--<input id="ac-4" name="accordion-1" type="checkbox" />-->
-                <!--<label for="ac-4">Contact us</label>-->
-                <!--<article class="ac-large">-->
-                    <!--<p>You see? It's curious. Ted did figure it out - time travel. And when we get back, we gonna tell everyone. How it's possible, how it's done, what the dangers are. But then why fifty years in the future when the spacecraft encounters a black hole does the computer call it an 'unknown entry event'? Why don't they know? If they don't know, that means we never told anyone. And if we never told anyone it means we never made it back. Hence we die down here. Just as a matter of deductive logic. </p>-->
-                <!--</article>-->
-            <!--</div>-->
-        <!--</section>-->
-
     </div>
 </div>

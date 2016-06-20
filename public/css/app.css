@@ -159,7 +159,7 @@ input#round:hover, button[type="submit"]:hover, button[type="button"]:hover {
 .content_login {
     background: url(../images/bg.png);
     background-size: 100% 100%;
-    min-height: 550px;
+    min-height: 550px !important;
 }
 
 input[type="text"], input[type="email"], input[type="password"] {
@@ -420,24 +420,13 @@ input[type="text"], input[type="email"], input[type="password"] {
     margin-left: 10px;
 }
 
-.img {
-    width: 100%;
-}
-
-.img1 {
-    width: 60%;
-    margin-left: 20%;
-}
-
 .oneTr {
     background: #fff;
-    overflow: hidden;
     padding: 5px 0;
 }
 
 .tooTr {
-    background: #fff;
-    overflow: hidden;
+    background: #eee;
     padding: 5px 0;
 }
 
@@ -454,31 +443,33 @@ input.ng-valid {
     background: white url(../images/Check.png) no-repeat right center;
 }
 
-#gender{
-    float: left!important;
-    padding: 21px!important;
-    padding-left: 0!important;
+#gender {
+    float: left !important;
+    padding: 21px !important;
+    padding-left: 0 !important;
     color: #fff !important;
 }
 
 input[type="radio"] {
-    display:none;
+    display: none;
 }
+
 input[type="radio"] + i:before {
     content: url(../images/noCheck.png);
-    margin-right:10px;
+    margin-right: 10px;
     float: left;
 }
+
 input[type="radio"]:checked + i:before {
-    content:url(../images/Check.png);
-    margin:-7px -5px 0 0;
-    height:26px;
+    content: url(../images/Check.png);
+    margin: -7px -5px 0 0;
+    height: 26px;
     float: left;
 }
 
 /* only to get the list vertical */
 .free_page > label {
-    display:block
+    display: block
 }
 
 .flipbook-viewport {
@@ -617,78 +608,114 @@ input:checked + label {
     border-radius: 3px;
 }
 
-#template_1{
+#template_1 {
     background-image: url(../images/1.png);
     background-size: cover;
 }
-#template_1:hover{
+
+#template_1:hover {
     background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/1.png);
     background-size: cover;
 }
 
-#template_2{
+#template_2 {
     background-image: url(../images/6.png);
     background-size: cover;
 }
-#template_2:hover{
+
+#template_2:hover {
     background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/6.png);
     background-size: cover;
 }
 
-#template_3{
+#template_3 {
     background-image: url(../images/9.png);
     background-size: cover;
 }
-#template_3:hover{
+
+#template_3:hover {
     background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/9.png);
     background-size: cover;
 }
 
-#template_4{
+#template_4 {
     background-image: url(../images/2.png);
     background-size: cover;
 }
-#template_4:hover{
+
+#template_4:hover {
     background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/2.png);
     background-size: cover;
 }
 
-#template_5{
+#template_5 {
     background-image: url(../images/3.png);
     background-size: cover;
 }
-#template_5:hover{
+
+#template_5:hover {
     background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/3.png);
     background-size: cover;
 }
 
-#template_6{
+#template_6 {
     background-image: url(../images/4.png);
     background-size: cover;
 }
-#template_6:hover{
+
+#template_6:hover {
     background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/4.png);
     background-size: cover;
 }
 
-#template_7{
+#template_7 {
     background-image: url(../images/5.png);
     background-size: cover;
 }
-#template_7:hover{
+
+#template_7:hover {
     background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/5.png);
     background-size: cover;
 }
 
-#template_8{
+#template_8 {
     background-image: url(../images/7.png);
     background-size: cover;
 }
-#template_8:hover{
+
+#template_8:hover {
     background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/7.png);
     background-size: cover;
 }
 
+.main-template{
+    width: 100%!important;
+    background: white;
+    min-height: 550px!important;
+    padding: 0!important;
+}
+
+.templates div{
+    min-height: 150px;
+}
+
+.templates img {
+    width: 50px;
+    height: 50px;
+}
+
+.cv_parts{
+    text-align: center;
+}
+.cv_parts_2 span,.cv_parts_3 span{
+    font-size: 14px!important;
+}
+
+.profile_image {
+    width: 150px !important;
+    height: 150px !important;
+    margin-left: 0!important;
+}
 
 @media screen and (max-width: 650px) {
     label {
