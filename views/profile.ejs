@@ -22,14 +22,14 @@
                     </div>
                     <div class="col-xs-4 cv_parts_2">
                         <p>First name: <span class="firstName"></span></p>
-                        <p>Last name: <span class="lastName"></span> </p>
-                        <p>Date of birth: <span class="dob"></span> </p>
-                        <p>Nationality: <span class="nationality"></span> </p>
+                        <p>Last name: <span class="lastName"></span></p>
+                        <p>Date of birth: <span class="dob"></span></p>
+                        <p>Nationality: <span class="nationality"></span></p>
                     </div>
                     <div class="col-xs-4 cv_parts_3">
                         <p>Email address: <span class="email"></span></p>
-                        <p>Phone Number: <span class="phone"></span> </p>
-                        <p>Address: <span class="address"></span> </p>
+                        <p>Phone Number: <span class="phone"></span></p>
+                        <p>Address: <span class="address"></span></p>
                     </div>
                 </div>
                 <div class="oneTr">
@@ -110,20 +110,26 @@
                 <div id="template_8" class="templates"></div>
             </section>
             <section id="content1">
-                <form id="uploadForm"
+                <div class="col-lg-6 col-lg-offset-3 free_page">
+                <form id="uploadForm" style="margin-left:100px"
                       enctype="multipart/form-data"
                       action="/api/photo"
                       method="post">
-                    <input type="file" name="userPhoto" />
+                    <label>
+                        <span class="fa-stack fa-lg fa-2x">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-upload fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <input type="file" name="userPhoto" style="display:none"/>
+                    </label>
                     <input type="submit" value="Upload Image" name="submit">
-                    <img src="/images/work.png" id = "status" width="100" height="100"/>
+                    <img src="/images/work.png" id="status" width="100" height="100"/>
                 </form>
                 <form name="myForm" novalidate>
-                    <div class="col-lg-5 col-lg-offset-1 free_page">
                         <!--<label id="gender"><input type="radio" name="gender" ng-model="site" value="<%= global.lang.male %>"/><i></i> <%= global.lang.male %> -->
                         <!--</label>-->
                         <!--<label id="gender"> <input type="radio" name="gender" value="<%= global.lang.female %>"-->
-                                                   <!--ng-model="ttt"/><i></i> <%= global.lang.female %></label>-->
+                        <!--ng-model="ttt"/><i></i> <%= global.lang.female %></label>-->
                         <input type="text" class="form-control" name="firstName" ng-model="firstName"
                                ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
                                placeholder="<%= global.lang.name %>" required>
@@ -133,8 +139,6 @@
                         <input type="text" class="form-control" name="dob" ng-minlength="3" ng-maxlength="20"
                                ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="dob"
                                required placeholder="<%= global.lang.date %> (YYYY-MM-DD)">
-                    </div>
-                    <div class="col-lg-5 free_page">
                         <input type="text" class="form-control" name="nationality" ng-minlength="3" ng-maxlength="20"
                                ng-pattern="/[a-zա-ֆа-я]{3,20}/i" ng-model="nationality" required
                                placeholder="<%= global.lang.nationality %>">
@@ -147,9 +151,9 @@
                         <input type="text" class="form-control" name="address" ng-minlength="3" ng-maxlength="30"
                                ng-pattern="/[A-Za-zա-ֆа-я0-9'\.\-\s\,]/i" ng-model="address" required
                                placeholder="<%= global.lang.address %>">
-                    </div>
                     <button type="button" class="btn btn-info btn-lg" id="preview"><%= global.lang.preview %></button>
                 </form>
+                    </div>
             </section>
 
             <section id="content2">
@@ -208,22 +212,22 @@
 </div>
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
 
-        $('#uploadForm').submit(function() {
+        $('#uploadForm').submit(function () {
             $("#status").empty().text("File is uploading...");
 
             $(this).ajaxSubmit({
 
-                error: function(xhr) {
+                error: function (xhr) {
                     status('Error: ' + xhr.status);
                 },
 
-                success: function(response) {
+                success: function (response) {
                     console.log(response);
                     var res = response.substr(6);
-                    $("#status").attr("src",res);
-                    $(".profile_image").attr("src",res);
+                    $("#status").attr("src", res);
+                    $(".profile_image").attr("src", res);
 
                 }
             });
