@@ -7,12 +7,12 @@
              class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 div bounceInLeft animated">
             <div class="templates main-template" id="basic-table">
                 <div class="">
-                    <div class="col-xs-6">
-                        <img src="/images/papskok.png" class="profile_image"/>
-                        <span class="firstName"></span>
-                        <span class="lastName"></span>
+                    <div class="col-xs-10">
+                        <span><img src="/images/papskok.png" class="profile_image"/></span>
+                        <span class="firstName title" style="margin-left: 40px"></span>&nbsp;&nbsp;
+                        <span class="lastName title"></span>
                     </div>
-                    <div class="col-xs-6"><i class="fa fa-times fa-3x close_button pull-right" aria-hidden="true"></i>
+                    <div class="col-xs-2"><i class="fa fa-times fa-3x close_button pull-right" aria-hidden="true"></i>
                     </div>
                 </div>
                 <div class="tooTr">
@@ -111,10 +111,11 @@
             </section>
             <section id="content1">
                 <div class="col-lg-6 col-lg-offset-3 free_page">
-                <form id="uploadForm" style="margin-left:100px"
+                <form id="uploadForm"
                       enctype="multipart/form-data"
                       action="/api/photo"
                       method="post">
+                    <img src="/images/papskok.png" id="status" width="100" height="100"/>
                     <label>
                         <span class="fa-stack fa-lg fa-2x">
                         <i class="fa fa-circle fa-stack-2x"></i>
@@ -122,8 +123,7 @@
                         </span>
                         <input type="file" name="userPhoto" style="display:none"/>
                     </label>
-                    <input type="submit" value="Upload Image" name="submit">
-                    <img src="/images/work.png" id="status" width="100" height="100"/>
+                    <input type="submit" value="Upload Image" name="submit" class="upload_image">
                 </form>
                 <form name="myForm" novalidate>
                         <!--<label id="gender"><input type="radio" name="gender" ng-model="site" value="<%= global.lang.male %>"/><i></i> <%= global.lang.male %> -->
@@ -152,6 +152,7 @@
                                ng-pattern="/[A-Za-zա-ֆа-я0-9'\.\-\s\,]/i" ng-model="address" required
                                placeholder="<%= global.lang.address %>">
                     <button type="button" class="btn btn-info btn-lg" id="preview"><%= global.lang.preview %></button>
+                    <button type="reset" class="btn btn-info btn-lg" id="reset">Cancel</button>
                 </form>
                     </div>
             </section>

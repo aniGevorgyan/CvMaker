@@ -73,7 +73,7 @@ nav a:hover, .content_1 a:hover {
     /*opacity: 0.5*/
 }
 
-input#round, button[type="submit"], button[type="button"] {
+input#round, button[type="submit"], button[type="button"], button[type="reset"], .upload_image {
     margin: 20px;
     min-width: 150px; /*same as the height*/
     height: 60px; /*same as the width*/
@@ -92,6 +92,12 @@ input#round, button[type="submit"], button[type="button"] {
     outline: none !important;
 }
 
+.upload_image {
+    margin: 0;
+    height: 40px;
+    font-size: 1em;
+}
+
 #logout_button {
     margin: 20px;
     color: #fff;
@@ -99,7 +105,7 @@ input#round, button[type="submit"], button[type="button"] {
 }
 
 /***NOW STYLE THE BUTTON'S HOVER STATE***/
-input#round:hover, button[type="submit"]:hover, button[type="button"]:hover {
+input#round:hover, button[type="submit"]:hover, button[type="reset"]:hover, button[type="button"]:hover, .upload_image:hover {
     background: #206FA7;
     border: 1px solid #206FA7;
     /*reduce the size of the shadow to give a pushed effect*/
@@ -454,6 +460,10 @@ input[type="radio"] {
     display: none;
 }
 
+#preview {
+    margin-left: 0;
+}
+
 input[type="radio"] + i:before {
     content: url(../images/noCheck.png);
     margin-right: 10px;
@@ -529,7 +539,7 @@ main {
 }
 
 /*main input {*/
-    /*display: none;*/
+/*display: none;*/
 /*}*/
 
 section {
@@ -688,14 +698,14 @@ input:checked + label {
     background-size: cover;
 }
 
-.main-template{
-    width: 100%!important;
+.main-template {
+    width: 100% !important;
     background: white;
-    min-height: 550px!important;
-    padding: 0!important;
+    min-height: 550px !important;
+    padding: 0 !important;
 }
 
-.templates div{
+.templates div {
     min-height: 150px;
 }
 
@@ -704,17 +714,27 @@ input:checked + label {
     height: 50px;
 }
 
-.cv_parts{
+.cv_parts {
     text-align: center;
 }
-.cv_parts_2 span,.cv_parts_3 span{
-    font-size: 14px!important;
+
+.cv_parts_2 span, .cv_parts_3 span {
+    font-size: 14px !important;
 }
 
 .profile_image {
     width: 150px !important;
     height: 150px !important;
-    margin-left: 10%!important;
+    margin-left: 5% !important;
+    padding: 5px;
+}
+
+.title {
+    font-size: 24px;
+}
+
+span .title:first-child {
+    margin-left: 40px;
 }
 
 @media screen and (max-width: 650px) {
