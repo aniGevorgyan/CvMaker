@@ -31,6 +31,10 @@ var translations = {
     resume:'Ռեզյումե',
     download:'Ներբեռնել',
     edit: 'Խմբագրել',
+    skills:'Հմտություններ',
+    work:'Աշխատանք',
+    education:'Կրթություն',
+    template:'Օրինակներ'
 
 };
 
