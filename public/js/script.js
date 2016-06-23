@@ -26,6 +26,9 @@ $(document).ready(function () {
         infoFromInputs("phone");
         infoFromCheckedInputs("gender");
         infoFromInputs("address");
+        var inf = $('#allInfo');
+        var ppp = $('#pdf2htmldiv').html();
+        inf.val(ppp);
     });
 
     function closePrewiev(){
