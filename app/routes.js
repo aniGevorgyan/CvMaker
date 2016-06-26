@@ -107,16 +107,26 @@ module.exports = function (app, passport) {
     });
 
     app.post('/pdfGenrator', function (req, res) {
-        var PDFDocument = require('pdfkit');
-        var fs = require('fs');
-        var doc = new PDFDocument();
+        // var PDFDocument = require('pdfkit');
+        // var fs = require('fs');
+        // var doc = new PDFDocument();
+        // var path = require('path');
+        // var content = req.body.content;
+        // // doc.font('/fonts/Aramian Expanded Italic.ttf')
+        // doc.text(content);
+        // doc.pipe(fs.createWriteStream(path.resolve(".") + '/PDF/' + "pdf_example" + '.pdf')); // it create a file that write the document
+        // setTimeout(res.download(path.resolve(".") + '/PDF/' + "pdf_example" + '.pdf'), 3000); // it download this file
+        // doc.end(); // document end by the end method
+
+        var wkhtmltopdf = require('wkhtmltopdf');
+        var fs2 = require('fs');
         var path = require('path');
+
+// URL
         var content = req.body.content;
-        // doc.font('/fonts/Aramian Expanded Italic.ttf')
-        doc.text(content);
-        doc.pipe(fs.createWriteStream(path.resolve(".") + '/PDF/' + "pdf_example" + '.pdf')); // it create a file that write the document
-        setTimeout(res.download(path.resolve(".") + '/PDF/' + "pdf_example" + '.pdf'), 3000); // it download this file
-        doc.end(); // document end by the end method
+        wkhtmltopdf('<!doctype html><html><head><title>Test</title><meta charset="utf-8"></head><body>' + content + '</body></html>', {pageSize: 'letter'})
+            .pipe(fs2.createWriteStream(path.resolve(".") + '/PDF/' + "kuku2" + '.pdf'));
+        res.download(path.resolve(".") + '/PDF/' + "kuku2" + '.pdf');
     });
 };
 

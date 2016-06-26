@@ -37,21 +37,45 @@
                         <img src="/images/uchoba.png"><br/>
                         <span class="spanText">Education</span>
                     </div>
-                    <div class="col-xs-8" style="color:red">esdrghjdfghsdfgh</div>
+                    <div class="col-xs-8">
+                        <span class="bold_font eduCourse"></span>
+                        <span class="color_blue pull-right"><span class="eduStart color_blue"></span> - <span
+                                    class="eduEnd color_blue"></span></span>
+                        <p class="color_blue eduInstitution">GPMI Gyumri</p>
+                        <p class="eduInfo"></p>
+                    </div>
                 </div>
                 <div class="tooTr">
                     <div class="col-xs-4 cv_parts">
                         <img src="/images/work.png"><br/>
                         <span class="spanText">Work experience</span>
                     </div>
-                    <div class="col-xs-8">esdrghjdfghsdfgh</div>
+                    <div class="col-xs-8">
+                        <span class="bold_font workTitle">bla bla</span>
+                        <span class="color_blue pull-right"><span class="workStart color_blue"></span> - <span
+                                    class="workEnd color_blue"></span></span>
+                        <p class="color_blue workCompany">GPMI Gyumri</p>
+                        <p class="workInfo"></p>
+                    </div>
                 </div>
                 <div class="oneTr">
                     <div class="col-xs-4 cv_parts">
                         <img src="/images/skills.png"><br/>
                         <span class="spanText">Skills</span>
                     </div>
-                    <div class="col-xs-8" style="color:red">esdrghjdfghsdfgh</div>
+                    <div class="col-xs-4 cv_parts_2">
+                        <p class="bold_font center_align">Software</p>
+                        <!--<p>Last name: <span class="lastName"></span></p>-->
+                        <!--<p>Date of birth: <span class="dob"></span></p>-->
+                        <!--<p>Nationality: <span class="nationality"></span></p>-->
+                    </div>
+                    <div class="col-xs-4 cv_parts_3">
+                        <p class="bold_font center_align">Languages</p>
+                        <p><span class="language"></span><span class="langRange pull-right"></span></p>
+                        <p><span class="language2"></span><span class="langRange2 pull-right"></span></p>
+                        <p><span class="language3"></span><span class="langRange3 pull-right"></span></p>
+                        <!--<p>Address: <span class="address"></span></p>-->
+                    </div>
                 </div>
                 <div class="tooTr">
                     <div class="col-xs-4 cv_parts">
@@ -65,9 +89,9 @@
         <button type="button" onclick="javascript:pdfToHTML()"
                 class="btn btn-info btn-lg"><%= global.lang.download %></button>
         <!--<form method="post" action="/pdfGenrator">-->
-            <!--<input type="text" name="content" placeholder="bla bla" id="allInfo" value="kkk" style="color:black"/>-->
-            <!--<button type="submit"-->
-                <!--class="btn btn-info btn-lg"><%= global.lang.download %></button>-->
+        <!--<input type="text" name="content" placeholder="bla bla" id="allInfo" value="kkk" style="color:black"/>-->
+        <!--<button type="submit"-->
+        <!--class="btn btn-info btn-lg"><%= global.lang.download %></button>-->
         <!--</form>-->
         <br/>
         <button type="button" class="btn btn-info btn-lg" id="edit"><%= global.lang.edit %></button>
@@ -99,7 +123,7 @@
             <label for="tab2">Education</label>
 
             <input id="tab3" type="radio" name="tabs">
-            <label for="tab3">Work</label>
+            <label for="tab3">Work experience</label>
 
             <input id="tab4" type="radio" name="tabs">
             <label for="tab4">Skills</label>
@@ -116,32 +140,29 @@
             </section>
             <section id="content1">
                 <div class="col-lg-6 col-lg-offset-3 free_page">
-                <form id="uploadForm"
-                      enctype="multipart/form-data"
-                      action="/api/photo"
-                      method="post">
-                    <img src="/images/papskok.png" id="status" width="100" height="100"/>
-                    <label>
+                    <form id="uploadForm"
+                          enctype="multipart/form-data"
+                          action="/api/photo"
+                          method="post">
+                        <img src="/images/papskok.png" id="status" width="100" height="100"/>
+                        <label>
                         <span class="fa-stack fa-lg fa-2x">
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-upload fa-stack-1x fa-inverse"></i>
                         </span>
-                        <input type="file" name="userPhoto" style="display:none"/>
-                    </label>
-                    <input type="submit" value="Upload Image" name="submit" class="upload_image">
-                </form>
-                <form name="myForm" novalidate>
-                        <!--<label id="gender"><input type="radio" name="gender" ng-model="site" value="<%= global.lang.male %>"/><i></i> <%= global.lang.male %> -->
-                        <!--</label>-->
-                        <!--<label id="gender"> <input type="radio" name="gender" value="<%= global.lang.female %>"-->
-                        <!--ng-model="ttt"/><i></i> <%= global.lang.female %></label>-->
+                            <input type="file" name="userPhoto" style="display:none"/>
+                        </label>
+                        <input type="submit" value="Upload Image" name="submit" class="upload_image">
+                    </form>
+                    <form name="myForm" novalidate>
                         <input type="text" class="form-control" name="firstName" ng-model="firstName"
                                ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
                                placeholder="<%= global.lang.name %>" required>
                         <input type="text" class="form-control" name="lastName" ng-minlength="3" ng-maxlength="20"
                                ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-model="lastName" required
                                placeholder="<%= global.lang.lastName %>">
-                        <input type="text" class="form-control" name="dob" ng-minlength="3" ng-maxlength="20"
+                        <input type="text" onfocus="(this.type='date')" class="form-control" name="dob" ng-minlength="3"
+                               ng-maxlength="20"
                                ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="dob"
                                required placeholder="<%= global.lang.date %> (YYYY-MM-DD)">
                         <input type="text" class="form-control" name="nationality" ng-minlength="3" ng-maxlength="20"
@@ -156,61 +177,115 @@
                         <input type="text" class="form-control" name="address" ng-minlength="3" ng-maxlength="30"
                                ng-pattern="/[A-Za-zա-ֆа-я0-9'\.\-\s\,]/i" ng-model="address" required
                                placeholder="<%= global.lang.address %>">
-                    <button type="button" class="btn btn-info btn-lg" id="preview"><%= global.lang.preview %></button>
-                    <button type="reset" class="btn btn-info btn-lg" id="reset">Cancel</button>
-                </form>
-                    </div>
+                        <button type="button" class="btn btn-info btn-lg preview"><%= global.lang.preview %></button>
+                        <button type="reset" class="btn btn-info btn-lg" id="reset">Cancel</button>
+                    </form>
+                </div>
             </section>
-
             <section id="content2">
-                <p>
-                    Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin ball tip
-                    turducken. Pork belly meatball t-bone bresaola tail filet mignon kevin turkey ribeye shank flank
-                    doner cow kielbasa shankle. Pig swine chicken hamburger, tenderloin turkey rump ball tip sirloin
-                    frankfurter meatloaf boudin brisket ham hock. Hamburger venison brisket tri-tip andouille pork belly
-                    ball tip short ribs biltong meatball chuck. Pork chop ribeye tail short ribs, beef hamburger
-                    meatball kielbasa rump corned beef porchetta landjaeger flank. Doner rump frankfurter meatball
-                    meatloaf, cow kevin pork pork loin venison fatback spare ribs salami beef ribs.
-                </p>
-                <p>
-                    Jerky jowl pork chop tongue, kielbasa shank venison. Capicola shank pig ribeye leberkas filet mignon
-                    brisket beef kevin tenderloin porchetta. Capicola fatback venison shank kielbasa, drumstick ribeye
-                    landjaeger beef kevin tail meatball pastrami prosciutto pancetta. Tail kevin spare ribs ground round
-                    ham ham hock brisket shoulder. Corned beef tri-tip leberkas flank sausage ham hock filet mignon beef
-                    ribs pancetta turkey.
-                </p>
+                <div class="col-lg-6 col-lg-offset-3 free_page">
+                    <form name="myForm" novalidate>
+                        <input type="text" class="form-control" name="eduCourse" ng-model="eduCourse"
+                               ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
+                               placeholder="Course name" required>
+                        <input type="text" class="form-control" name="eduInstitution" ng-minlength="3" ng-maxlength="20"
+                               ng-pattern="/[a-zա-ֆа-я ,.'-]{3,30}/i" ng-model="eduInstitution" required
+                               placeholder="Institution name">
+                        <input type="text" onfocus="(this.type='date')" class="form-control" name="eduStart"
+                               ng-minlength="3" ng-maxlength="20"
+                               ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="eduStart"
+                               required placeholder="Start date">
+                        <input type="text" onfocus="(this.type='date')" class="form-control" name="eduEnd"
+                               ng-minlength="3" ng-maxlength="20"
+                               ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="eduEnd"
+                               required placeholder="Start date">
+                        <textarea class="form-control" id="textArea" name="eduInfo"
+                                  placeholder="Other Information"></textarea>
+                        <button type="button" class="btn btn-info btn-lg preview"><%= global.lang.preview %></button>
+                        <button type="reset" class="btn btn-info btn-lg" id="reset">Cancel</button>
+                    </form>
+                </div>
             </section>
-
             <section id="content3">
-                <p>
-                    Bacon ipsum dolor sit amet beef venison beef ribs kielbasa. Sausage pig leberkas, t-bone sirloin
-                    shoulder bresaola. Frankfurter rump porchetta ham. Pork belly prosciutto brisket meatloaf short
-                    ribs.
-                </p>
-                <p>
-                    Brisket meatball turkey short loin boudin leberkas meatloaf chuck andouille pork loin pastrami spare
-                    ribs pancetta rump. Frankfurter corned beef beef tenderloin short loin meatloaf swine ground round
-                    venison.
-                </p>
+                <div class="col-lg-6 col-lg-offset-3 free_page">
+                    <form name="myForm" novalidate>
+                        <input type="text" class="form-control" name="workTitle" ng-model="workTitle"
+                               ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
+                               placeholder="Job title" required>
+                        <input type="text" class="form-control" name="workCompany" ng-minlength="3" ng-maxlength="20"
+                               ng-pattern="/[a-zա-ֆа-я ,.'-]{3,30}/i" ng-model="workCompany" required
+                               placeholder="Company name">
+                        <input type="text" onfocus="(this.type='date')" class="form-control" name="workStart"
+                               ng-minlength="3" ng-maxlength="20"
+                               ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="workStart"
+                               required placeholder="Start date">
+                        <input type="text" onfocus="(this.type='date')" class="form-control" name="workEnd"
+                               ng-minlength="3" ng-maxlength="20"
+                               ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="workEnd"
+                               required placeholder="Start date">
+                        <textarea class="form-control" id="textArea" name="workInfo"
+                                  placeholder="Other Information"></textarea>
+                        <button type="button" class="btn btn-info btn-lg preview"><%= global.lang.preview %></button>
+                        <button type="reset" class="btn btn-info btn-lg" id="reset">Cancel</button>
+                    </form>
+                </div>
             </section>
-
             <section id="content4">
-                <p>
-                    Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin ball tip
-                    turducken. Pork belly meatball t-bone bresaola tail filet mignon kevin turkey ribeye shank flank
-                    doner cow kielbasa shankle. Pig swine chicken hamburger, tenderloin turkey rump ball tip sirloin
-                    frankfurter meatloaf boudin brisket ham hock. Hamburger venison brisket tri-tip andouille pork belly
-                    ball tip short ribs biltong meatball chuck. Pork chop ribeye tail short ribs, beef hamburger
-                    meatball kielbasa rump corned beef porchetta landjaeger flank. Doner rump frankfurter meatball
-                    meatloaf, cow kevin pork pork loin venison fatback spare ribs salami beef ribs.
-                </p>
-                <p>
-                    Jerky jowl pork chop tongue, kielbasa shank venison. Capicola shank pig ribeye leberkas filet mignon
-                    brisket beef kevin tenderloin porchetta. Capicola fatback venison shank kielbasa, drumstick ribeye
-                    landjaeger beef kevin tail meatball pastrami prosciutto pancetta. Tail kevin spare ribs ground round
-                    ham ham hock brisket shoulder. Corned beef tri-tip leberkas flank sausage ham hock filet mignon beef
-                    ribs pancetta turkey.
-                </p>
+                <div class="col-lg-10 col-lg-offset-1 free_page">
+                    <h2 style="color: #02547A;margin-left: 15px">Languages</h2>
+                    <form name="myForm" novalidate>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" name="language" ng-model="language"
+                                       ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
+                                       placeholder="e.g. English" required>
+                            </div>
+                            <div class="col-xs-8">
+                                <label class="lang"><input type="radio" name="langRange"
+                                                           value="Basics"/><i></i>Basics</label>
+                                <label class="lang"><input type="radio" name="langRange" value="Intermediate"/><i></i>Intermediate</label>
+                                <label class="lang"><input type="radio" name="langRange"
+                                                           value="Advanced"/><i></i>Advanced</label>
+                                <label class="lang"><input type="radio" name="langRange"
+                                                           value="Expert"/><i></i>Expert</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" name="language2" ng-model="language2"
+                                       ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
+                                       placeholder="e.g. English" required>
+                            </div>
+                            <div class="col-xs-8">
+                                <label class="lang"><input type="radio" name="langRange2"
+                                                           value="Basics"/><i></i>Basics</label>
+                                <label class="lang"><input type="radio" name="langRange2" value="Intermediate"/><i></i>Intermediate</label>
+                                <label class="lang"><input type="radio" name="langRange2"
+                                                           value="Advanced"/><i></i>Advanced</label>
+                                <label class="lang"><input type="radio" name="langRange2"
+                                                           value="Expert"/><i></i>Expert</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" name="language3" ng-model="language3"
+                                       ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
+                                       placeholder="e.g. English" required>
+                            </div>
+                            <div class="col-xs-8">
+                                <label class="lang"><input type="radio" name="langRange3"
+                                                           value="Basics"/><i></i>Basics</label>
+                                <label class="lang"><input type="radio" name="langRange3" value="Intermediate"/><i></i>Intermediate</label>
+                                <label class="lang"><input type="radio" name="langRange3"
+                                                           value="Advanced"/><i></i>Advanced</label>
+                                <label class="lang"><input type="radio" name="langRange3"
+                                                           value="Expert"/><i></i>Expert</label>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-info btn-lg preview"><%= global.lang.preview %></button>
+                        <button type="reset" class="btn btn-info btn-lg" id="reset">Cancel</button>
+                    </form>
+                </div>
             </section>
 
         </main>
