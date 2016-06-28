@@ -86,13 +86,13 @@
                 </div>
             </div>
         </div>
-        <button type="button" onclick="javascript:pdfToHTML()"
-                class="btn btn-info btn-lg"><%= global.lang.download %></button>
-        <!--<form method="post" action="/pdfGenrator">-->
-        <!--<input type="text" name="content" placeholder="bla bla" id="allInfo" value="kkk" style="color:black"/>-->
-        <!--<button type="submit"-->
-        <!--class="btn btn-info btn-lg"><%= global.lang.download %></button>-->
-        <!--</form>-->
+        <!--<button type="button" onclick="javascript:pdfToHTML()"-->
+                <!--class="btn btn-info btn-lg"><%= global.lang.download %></button>-->
+        <form method="post" action="/pdfGenrator">
+        <input type="text" name="content" placeholder="bla bla" id="allInfo" value="kkk" style="color:black"/>
+        <button type="submit"
+        class="btn btn-info btn-lg"><%= global.lang.download %></button>
+        </form>
         <br/>
         <button type="button" class="btn btn-info btn-lg" id="edit"><%= global.lang.edit %></button>
     </div>
