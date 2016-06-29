@@ -55,7 +55,7 @@ var translations = {
         armenian: 'Армянский',
         basics: 'Основной',
         advanced: 'Продвинутый',
-        Intermediate: 'Intermediate',
+        Intermediate: 'Средний',
         Expert: 'Эксперт',
         Welcome: 'Добро пожаловат'
     }

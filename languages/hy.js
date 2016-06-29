@@ -52,9 +52,9 @@ var translations = {
     russian: 'Ռուսերեն',
     armenian: 'Հայերեն',
     basics: 'Հիմնական',
-    advanced: 'Առաջադեմ',
-    Intermediate: 'Միջանկյալ',
-    Expert: 'Փորձագետ',
+    advanced: 'Վարժ',
+    Intermediate: 'Միջին',
+    Expert: 'Գերազանց',
     Welcome: 'Բարի գալուստ',
     Languages:'Լեզուներ'
     

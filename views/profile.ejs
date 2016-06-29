@@ -16,24 +16,24 @@
                 <div class="tooTr">
                     <div class="col-xs-4 cv_parts">
                         <img src=" /images/personal.png"><br/>
-                        <span class="spanText">Personal info</span>
+                        <span class="spanText"><%= global.lang.personalInfo %></span>
                     </div>
                     <div class="col-xs-4 cv_parts_2">
                         <p><%= global.lang.name %>: <span class="firstName"></span></p>
                         <p><%= global.lang.lastName %>: <span class="lastName"></span></p>
-                        <p>Date of birth: <span class="dob"></span></p>
-                        <p>Nationality: <span class="nationality"></span></p>
+                        <p><%= global.lang.date %>: <span class="dob"></span></p>
+                        <p><%= global.lang.nationality %>: <span class="nationality"></span></p>
                     </div>
                     <div class="col-xs-4 cv_parts_3">
-                        <p>Email address: <span class="email"></span></p>
-                        <p>Phone Number: <span class="phone"></span></p>
-                        <p>Address: <span class="address"></span></p>
+                        <p><%= global.lang.email %>: <span class="email"></span></p>
+                        <p><%= global.lang.phoneNumber %>: <span class="phone"></span></p>
+                        <p><%= global.lang.address %>: <span class="address"></span></p>
                     </div>
                 </div>
                 <div class="oneTr">
                     <div class="col-xs-4 cv_parts">
                         <img src=" /images/uchoba.png"><br/>
-                        <span class="spanText">Education</span>
+                        <span class="spanText"><%= global.lang.education %></span>
                     </div>
                     <div class="col-xs-8">
                         <span class="bold_font eduCourse"></span>
@@ -46,7 +46,7 @@
                 <div class="tooTr">
                     <div class="col-xs-4 cv_parts">
                         <img src=" /images/work.png"><br/>
-                        <span class="spanText">Work experience</span>
+                        <span class="spanText"><%= global.lang.work %></span>
                     </div>
                     <div class="col-xs-8">
                         <span class="bold_font workTitle">bla bla</span>
@@ -59,7 +59,7 @@
                 <div class="oneTr">
                     <div class="col-xs-4 cv_parts">
                         <img src=" /images/skills.png"><br/>
-                        <span class="spanText">Skills</span>
+                        <span class="spanText"><%= global.lang.skills %></span>
                     </div>
                     <div class="col-xs-4 cv_parts_2">
                         <p class="bold_font center_align">Software</p>
@@ -68,7 +68,7 @@
                         <!--<p>Nationality: <span class="nationality"></span></p>-->
                     </div>
                     <div class="col-xs-4 cv_parts_3">
-                        <p class="bold_font center_align">Languages</p>
+                        <p class="bold_font center_align"><%= global.lang.Languages %></p>
                         <p><span class="language"></span><span class="langRange pull-right"></span></p>
                         <p><span class="language2"></span><span class="langRange2 pull-right"></span></p>
                         <p><span class="language3"></span><span class="langRange3 pull-right"></span></p>
@@ -97,7 +97,7 @@
         <button type="button" class="btn btn-info btn-lg" id="edit"><%= global.lang.edit %></button>
     </div>
     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-        <h3><span class="fa fa-user"></span> Welcome <span>
+        <h3><span class="fa fa-user"></span> <%= global.lang.Welcome %> <span>
                 <% if(user.local.username){ %>
                 <%= user.local.username %>
                 <% }else{ %>
@@ -109,24 +109,24 @@
             </span></h3>
     </div>
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-        <a href="/logout" class="pull-right" id="logout_button">Logout</a>
+        <a href="/logout" class="pull-right" id="logout_button"><%= global.lang.logout %></a>
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <main>
             <input id="tab0" type="radio" name="tabs" checked>
-            <label for="tab0">Template</label>
+            <label for="tab0"><%= global.lang.Template %></label>
 
             <input id="tab1" type="radio" name="tabs">
-            <label for="tab1">Personal Information</label>
+            <label for="tab1"><%= global.lang.personalInfo %></label>
 
             <input id="tab2" type="radio" name="tabs">
-            <label for="tab2">Education</label>
+            <label for="tab2"><%= global.lang.education %></label>
 
             <input id="tab3" type="radio" name="tabs">
-            <label for="tab3">Work experience</label>
+            <label for="tab3"><%= global.lang.work %></label>
 
             <input id="tab4" type="radio" name="tabs">
-            <label for="tab4">Skills</label>
+            <label for="tab4"> <%= global.lang.skills %></label>
 
             <section id="content0">
                 <div id="template_1" class="templates"></div>
@@ -152,7 +152,7 @@
                         </span>
                             <input type="file" name="userPhoto" style="display:none"/>
                         </label>
-                        <input type="submit" value="Upload Image" name="submit" class="upload_image">
+                        <input type="submit" value=" <%= global.lang.uploadImage %>" name="submit" class="upload_image">
                     </form>
                     <form name="myForm" novalidate>
                         <input type="text" class="form-control" name="firstName" ng-model="firstName"
@@ -178,7 +178,7 @@
                                ng-pattern="/[A-Za-zա-ֆа-я0-9'\.\-\s\,]/i" ng-model="address" required
                                placeholder="<%= global.lang.address %>">
                         <button type="button" class="btn btn-info btn-lg preview"><%= global.lang.preview %></button>
-                        <button type="reset" class="btn btn-info btn-lg" id="reset">Cancel</button>
+                        <button type="reset" class="btn btn-info btn-lg" id="reset"><%= global.lang.cancel %></button>
                     </form>
                 </div>
             </section>
@@ -187,22 +187,22 @@
                     <form name="myForm" novalidate>
                         <input type="text" class="form-control" name="eduCourse" ng-model="eduCourse"
                                ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
-                               placeholder="Course name" required>
+                               placeholder="<%= global.lang.CourseName %>" required>
                         <input type="text" class="form-control" name="eduInstitution" ng-minlength="3" ng-maxlength="20"
                                ng-pattern="/[a-zա-ֆа-я ,.'-]{3,30}/i" ng-model="eduInstitution" required
-                               placeholder="Institution name">
+                               placeholder="<%= global.lang.institutionName %>">
                         <input type="text" onfocus="(this.type='date')" class="form-control" name="eduStart"
                                ng-minlength="3" ng-maxlength="20"
                                ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="eduStart"
-                               required placeholder="Start date">
+                               required placeholder="<%= global.lang.startDate %>">
                         <input type="text" onfocus="(this.type='date')" class="form-control" name="eduEnd"
                                ng-minlength="3" ng-maxlength="20"
                                ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="eduEnd"
-                               required placeholder="End date">
+                               required placeholder="<%= global.lang.EndDate %>">
                         <textarea class="form-control" id="textArea" name="eduInfo"
-                                  placeholder="Other Information"></textarea>
+                                  placeholder="<%= global.lang.otherInfo %>"></textarea>
                         <button type="button" class="btn btn-info btn-lg preview"><%= global.lang.preview %></button>
-                        <button type="reset" class="btn btn-info btn-lg" id="reset">Cancel</button>
+                        <button type="reset" class="btn btn-info btn-lg" id="reset"><%= global.lang.cancel %></button>
                     </form>
                 </div>
             </section>
@@ -211,79 +211,79 @@
                     <form name="myForm" novalidate>
                         <input type="text" class="form-control" name="workTitle" ng-model="workTitle"
                                ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
-                               placeholder="Job title" required>
+                               placeholder="<%= global.lang.jobTitle %>" required>
                         <input type="text" class="form-control" name="workCompany" ng-minlength="3" ng-maxlength="20"
                                ng-pattern="/[a-zա-ֆа-я ,.'-]{3,30}/i" ng-model="workCompany" required
-                               placeholder="Company name">
+                               placeholder="<%= global.lang.companyName %>">
                         <input type="text" onfocus="(this.type='date')" class="form-control" name="workStart"
                                ng-minlength="3" ng-maxlength="20"
                                ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="workStart"
-                               required placeholder="Start date">
+                               required placeholder="<%= global.lang.startDate %>">
                         <input type="text" onfocus="(this.type='date')" class="form-control" name="workEnd"
                                ng-minlength="3" ng-maxlength="20"
                                ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="workEnd"
-                               required placeholder="End date">
+                               required placeholder="<%= global.lang.EndDate %>">
                         <textarea class="form-control" id="textArea" name="workInfo"
-                                  placeholder="Other Information"></textarea>
+                                  placeholder="<%= global.lang.otherInfo %>"></textarea>
                         <button type="button" class="btn btn-info btn-lg preview"><%= global.lang.preview %></button>
-                        <button type="reset" class="btn btn-info btn-lg" id="reset">Cancel</button>
+                        <button type="reset" class="btn btn-info btn-lg" id="reset"><%= global.lang.cancel %></button>
                     </form>
                 </div>
             </section>
             <section id="content4">
                 <div class="col-lg-10 col-lg-offset-1 free_page">
-                    <h2 style="color: #02547A;margin-left: 15px">Languages</h2>
+                    <h2 style="color: #02547A;margin-left: 15px"><%= global.lang.Languages %></h2>
                     <form name="myForm" novalidate>
                         <div class="row">
                             <div class="col-xs-4">
                                 <input type="text" class="form-control" name="language" ng-model="language"
                                        ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
-                                       placeholder="e.g. English" required>
+                                       placeholder="<%= global.lang.eG %> <%= global.lang.english %>" required>
                             </div>
                             <div class="col-xs-8">
                                 <label class="lang"><input type="radio" name="langRange"
-                                                           value="Basics"/><i></i>Basics</label>
-                                <label class="lang"><input type="radio" name="langRange" value="Intermediate"/><i></i>Intermediate</label>
+                                                           value="Basics"/><i></i><%= global.lang.basics %></label>
+                                <label class="lang"><input type="radio" name="langRange" value="Intermediate"/><i></i> <%= global.lang.Intermediate %></label>
                                 <label class="lang"><input type="radio" name="langRange"
-                                                           value="Advanced"/><i></i>Advanced</label>
+                                                           value="Advanced"/><i></i><%= global.lang.advanced %></label>
                                 <label class="lang"><input type="radio" name="langRange"
-                                                           value="Expert"/><i></i>Expert</label>
+                                                           value="Expert"/><i></i><%= global.lang.Expert %></label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-4">
                                 <input type="text" class="form-control" name="language2" ng-model="language2"
                                        ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
-                                       placeholder="e.g. English" required>
+                                       placeholder="<%= global.lang.eG %> <%= global.lang.russian %>" required>
                             </div>
                             <div class="col-xs-8">
                                 <label class="lang"><input type="radio" name="langRange2"
-                                                           value="Basics"/><i></i>Basics</label>
-                                <label class="lang"><input type="radio" name="langRange2" value="Intermediate"/><i></i>Intermediate</label>
+                                                           value="Basics"/><i></i><%= global.lang.basics %></label>
+                                <label class="lang"><input type="radio" name="langRange2" value="Intermediate"/><i></i><%= global.lang.Intermediate %></label>
                                 <label class="lang"><input type="radio" name="langRange2"
-                                                           value="Advanced"/><i></i>Advanced</label>
+                                                           value="Advanced"/><i></i><%= global.lang.advanced %></label>
                                 <label class="lang"><input type="radio" name="langRange2"
-                                                           value="Expert"/><i></i>Expert</label>
+                                                           value="Expert"/><i></i><%= global.lang.Expert %></label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-4">
                                 <input type="text" class="form-control" name="language3" ng-model="language3"
                                        ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
-                                       placeholder="e.g. English" required>
+                                       placeholder="<%= global.lang.eG %> <%= global.lang.armenian %>" required>
                             </div>
                             <div class="col-xs-8">
                                 <label class="lang"><input type="radio" name="langRange3"
-                                                           value="Basics"/><i></i>Basics</label>
-                                <label class="lang"><input type="radio" name="langRange3" value="Intermediate"/><i></i>Intermediate</label>
+                                                           value="Basics"/><i></i><%= global.lang.basics %></label>
+                                <label class="lang"><input type="radio" name="langRange3" value="Intermediate"/><i></i><%= global.lang.Intermediate %></label>
                                 <label class="lang"><input type="radio" name="langRange3"
-                                                           value="Advanced"/><i></i>Advanced</label>
+                                                           value="Advanced"/><i></i><%= global.lang.advanced %></label>
                                 <label class="lang"><input type="radio" name="langRange3"
-                                                           value="Expert"/><i></i>Expert</label>
+                                                           value="Expert"/><i></i><%= global.lang.Expert %></label>
                             </div>
                         </div>
                         <button type="button" class="btn btn-info btn-lg preview"><%= global.lang.preview %></button>
-                        <button type="reset" class="btn btn-info btn-lg" id="reset">Cancel</button>
+                        <button type="reset" class="btn btn-info btn-lg" id="reset"><%= global.lang.cancel %></button>
                     </form>
                 </div>
             </section>
