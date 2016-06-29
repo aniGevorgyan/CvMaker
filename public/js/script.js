@@ -58,7 +58,7 @@ $(document).ready(function () {
         infoFromCheckedInputs("langRange3");
 
         $("#pdf2htmldiv img").each(function(){$(this).attr("src", $(this).attr("src").replace(" /images/","http://localhost:8080/images/") )});
-        $("#pdf2htmldiv img").each(function(){$(this).attr("src", $(this).attr("src").replace("/uploads/","http://localhost:8080/uploads/") )});
+        $("#pdf2htmldiv img").each(function(){$(this).attr("src", $(this).attr("src").replace("\\uploads\\","http://localhost:8080\\uploads\\") )});
         var cont = $('#pdf2htmldiv').html();
         var cv_name = $('.firstName').html();
         var cv_lastname = $('.lastName').html();
