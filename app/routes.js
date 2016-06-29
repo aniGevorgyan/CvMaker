@@ -107,26 +107,23 @@ module.exports = function (app, passport) {
     });
 
     app.post('/pdfGenrator', function (req, res) {
-        // var PDFDocument = require('pdfkit');
-        // var fs = require('fs');
-        // var doc = new PDFDocument();
-        // var path = require('path');
-        // var content = req.body.content;
-        // // doc.font('/fonts/Aramian Expanded Italic.ttf')
-        // doc.text(content);
-        // doc.pipe(fs.createWriteStream(path.resolve(".") + '/PDF/' + "pdf_example" + '.pdf')); // it create a file that write the document
-        // setTimeout(res.download(path.resolve(".") + '/PDF/' + "pdf_example" + '.pdf'), 3000); // it download this file
-        // doc.end(); // document end by the end method
-
         var wkhtmltopdf = require('wkhtmltopdf');
         var fs2 = require('fs');
         var path = require('path');
-
-// URL
         var content = req.body.content;
-        wkhtmltopdf('<!doctype html><html><head><title>Test</title><meta charset="utf-8"></head><body>' + content + '</body></html>', {pageSize: 'letter'})
-            .pipe(fs2.createWriteStream(path.resolve(".") + '/PDF/' + "kuku2" + '.pdf'));
-        res.download(path.resolve(".") + '/PDF/' + "kuku2" + '.pdf');
+        var cv_name = req.body.cv_name;
+        var cv_lastname = req.body.cv_lastname;
+        var headContent = '<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' +
+            '<link rel="stylesheet" href="' + path.resolve(".") + '/public/vendor/bower_components/bootstrap/css/bootstrap.css">' +
+            '<link rel="stylesheet" href="' + path.resolve(".") + '/public/css/app.css">';
+
+        wkhtmltopdf('<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' +
+            headContent +
+            '</head><body>' + content + '</body></html>', {pageSize: 'A4'})
+            .pipe(fs2.createWriteStream(path.resolve(".") + '/PDF/' + "armCv_" + cv_name + "_" + cv_lastname + '.pdf'));
+        console.log(content);
+        // res.end();
+        res.download(path.resolve(".") + '/PDF/' + "armCv_" + cv_name + "_" + cv_lastname + '.pdf');
     });
 };
 

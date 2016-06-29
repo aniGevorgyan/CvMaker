@@ -57,14 +57,16 @@ $(document).ready(function () {
         infoFromCheckedInputs("langRange2");
         infoFromCheckedInputs("langRange3");
 
-        // var arr=[];
-        // $('#lang :checkbox:checked').each(function() {
-        //     arr.push($(this).val());
-        // });
-        // $('#t').text(arr);
-        var inf = $('#allInfo');
-        var ppp = $('#pdf2htmldiv').html();
-        inf.val(ppp);
+        $("#pdf2htmldiv img").each(function(){$(this).attr("src", $(this).attr("src").replace(" /images/","http://localhost:8080/images/") )});
+        $("#pdf2htmldiv img").each(function(){$(this).attr("src", $(this).attr("src").replace("/uploads/","http://localhost:8080/uploads/") )});
+        var cont = $('#pdf2htmldiv').html();
+        var cv_name = $('.firstName').html();
+        var cv_lastname = $('.lastName').html();
+
+        $('#allInfo').val(cont);
+        $('#nameInfo').val(cv_name);
+        $('#lastnameInfo').val(cv_lastname);
+
     });
 
     function closePrewiev() {
