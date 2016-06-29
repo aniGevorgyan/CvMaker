@@ -107,34 +107,20 @@ module.exports = function (app, passport) {
     });
 
     app.post('/pdfGenrator', function (req, res) {
-        // var PDFDocument = require('pdfkit');
-        // var fs = require('fs');
-        // var doc = new PDFDocument();
-        // var path = require('path');
-        // var content = req.body.content;
-        // doc.font(path.resolve(".") +'/public/fonts/GHEAGrpalatReg.ttf');
-        // doc.image(path.resolve(".") +'/public/images/personal.png', 0, 15)
-        // .text('<!doctype html><html><head><title>Test</title><meta charset="utf-8"></head><body>' + content + '</body></html>');
-        // doc.pipe(fs.createWriteStream(path.resolve(".") + '/PDF/' + "pdf_example" + '.pdf')); // it create a file that write the document
-        // res.download(path.resolve(".") + '/PDF/' + "pdf_example" + '.pdf'); // it download this file
-        // doc.end(); // document end by the end method
-
         var wkhtmltopdf = require('wkhtmltopdf');
         var fs2 = require('fs');
         var path = require('path');
-
-// URL
         var content = req.body.content;
-        wkhtmltopdf('<!doctype html><html><head><title>Test</title><meta charset="utf-8">' +
+        var headContent = '<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' +
             '<link rel="stylesheet" href="' + path.resolve(".") + '/public/vendor/bower_components/bootstrap/css/bootstrap.css">' +
-            '<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">' +
-            '<link rel="stylesheet" href="' + path.resolve(".") + '/public/css/app.css">' +
-            '<style>.tooTr{background: #eee;padding: 5px 0;}</style>'+
-            '<script type="text/javascript" src="/js/jquery/jquery-1.7.1.min.js"></script>'+
-            '<script>$("#basic-table").each(function() {var text = $(this).text();$(this).text(text.replace("/images/","' + path.resolve(".") + '/public/images/" ));});</script>'+
-            '</head><body>' + content + '</body></html>', {pageSize: 'letter'})
-            .pipe(fs2.createWriteStream(path.resolve(".") + '/PDF/' + "kuku2" + '.pdf'));
-        res.download(path.resolve(".") + '/PDF/' + "kuku2" + '.pdf');
+            '<link rel="stylesheet" href="' + path.resolve(".") + '/public/css/app.css">';
+
+        wkhtmltopdf('<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' +
+            headContent +
+            '</head><body>' + content + '</body></html>', {pageSize: 'A4'})
+            .pipe(fs2.createWriteStream(path.resolve(".") + '/PDF/' + "qwe" + '.pdf'));
+        console.log(content);
+        res.download(path.resolve(".") + '/PDF/' + "qwe" + '.pdf');
     });
 };
 

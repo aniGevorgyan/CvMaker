@@ -1,6 +1,4 @@
 <% layout('layout/page') %>
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
-<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>-->
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content_login">
     <div class="main_div">
         <div id="pdf2htmldiv"
@@ -8,7 +6,7 @@
             <div class="templates main-template" id="basic-table">
                 <div class="">
                     <div class="col-xs-10">
-                        <span><img src="/images/papskok.png" class="profile_image"/></span>
+                        <span><img src=" /images/papskok.png" class="profile_image"/></span>
                         <span class="firstName title" style="margin-left: 40px"></span>&nbsp;&nbsp;
                         <span class="lastName title"></span>
                     </div>
@@ -17,12 +15,12 @@
                 </div>
                 <div class="tooTr">
                     <div class="col-xs-4 cv_parts">
-                        <img src="/images/personal.png"><br/>
+                        <img src=" /images/personal.png"><br/>
                         <span class="spanText">Personal info</span>
                     </div>
                     <div class="col-xs-4 cv_parts_2">
-                        <p>First name: <span class="firstName"></span></p>
-                        <p>Last name: <span class="lastName"></span></p>
+                        <p><%= global.lang.name %>: <span class="firstName"></span></p>
+                        <p><%= global.lang.lastName %>: <span class="lastName"></span></p>
                         <p>Date of birth: <span class="dob"></span></p>
                         <p>Nationality: <span class="nationality"></span></p>
                     </div>
@@ -34,7 +32,7 @@
                 </div>
                 <div class="oneTr">
                     <div class="col-xs-4 cv_parts">
-                        <img src="/images/uchoba.png"><br/>
+                        <img src=" /images/uchoba.png"><br/>
                         <span class="spanText">Education</span>
                     </div>
                     <div class="col-xs-8">
@@ -47,7 +45,7 @@
                 </div>
                 <div class="tooTr">
                     <div class="col-xs-4 cv_parts">
-                        <img src="/images/work.png"><br/>
+                        <img src=" /images/work.png"><br/>
                         <span class="spanText">Work experience</span>
                     </div>
                     <div class="col-xs-8">
@@ -60,7 +58,7 @@
                 </div>
                 <div class="oneTr">
                     <div class="col-xs-4 cv_parts">
-                        <img src="/images/skills.png"><br/>
+                        <img src=" /images/skills.png"><br/>
                         <span class="spanText">Skills</span>
                     </div>
                     <div class="col-xs-4 cv_parts_2">
@@ -79,7 +77,7 @@
                 </div>
                 <div class="tooTr">
                     <div class="col-xs-4 cv_parts">
-                        <img src="/images/hobbies.png"><br/>
+                        <img src=" /images/hobbies.png"><br/>
                         <span class="spanText">Hobbies</span>
                     </div>
                     <div class="col-xs-8" style="color:red">esdrghjdfghsdfgh</div>
@@ -198,7 +196,7 @@
                         <input type="text" onfocus="(this.type='date')" class="form-control" name="eduEnd"
                                ng-minlength="3" ng-maxlength="20"
                                ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="eduEnd"
-                               required placeholder="Start date">
+                               required placeholder="End date">
                         <textarea class="form-control" id="textArea" name="eduInfo"
                                   placeholder="Other Information"></textarea>
                         <button type="button" class="btn btn-info btn-lg preview"><%= global.lang.preview %></button>
@@ -222,7 +220,7 @@
                         <input type="text" onfocus="(this.type='date')" class="form-control" name="workEnd"
                                ng-minlength="3" ng-maxlength="20"
                                ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="workEnd"
-                               required placeholder="Start date">
+                               required placeholder="End date">
                         <textarea class="form-control" id="textArea" name="workInfo"
                                   placeholder="Other Information"></textarea>
                         <button type="button" class="btn btn-info btn-lg preview"><%= global.lang.preview %></button>

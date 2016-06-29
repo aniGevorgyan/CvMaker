@@ -627,6 +627,7 @@ input:checked + label {
     float: left;
     padding: 5px;
     border-radius: 3px;
+    color:black;
 }
 
 #template_1 {
