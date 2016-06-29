@@ -12,7 +12,7 @@ var translations = {
     phoneNumber: 'Հեռախոսահամար',
     gender: "Սեռ",
     male: "Արական",
-    female:"Իգական",
+    female: "Իգական",
     address: 'Հասցե',
     copy: 'ArmCv &copy; 2016.Բոլոր իրավունքները պաշտպանված են:',
     tryFree: 'Անվճար',
@@ -26,15 +26,39 @@ var translations = {
     account: 'Դուք արդեն գրանցվել եք?',
     home: 'Գլխավոր էջ',
     logAccount: 'Ուզում եք գրանցվել?',
-    photo:'գործել,որպեսզի ավելացնել  լուսանկար',
-    please:'Խնդրում ենք ',
-    resume:'Ռեզյումե',
-    download:'Ներբեռնել',
+    photo: 'գործել,որպեսզի ավելացնել  լուսանկար',
+    please: 'Խնդրում ենք ',
+    resume: 'Ռեզյումե',
+    download: 'Ներբեռնել',
+    Template: 'Օրինակներ',
+    education: 'Կրթություն',
     edit: 'Խմբագրել',
-    skills:'Հմտություններ',
-    work:'Աշխատանք',
-    education:'Կրթություն',
-    template:'Օրինակներ'
+    work: 'Աշխատանքային փորձ',
+    skills: 'Հմտություններ',
+    logout: 'Դուրս գալ',
+
+
+    uploadImage: "Ներբեռնել լուսանկար",
+    cancel: 'Չեղարկել',
+    CourseName: 'Դասընթացի անվանումը',
+    institutionName: 'Հաստատության անվանումը',
+    startDate: 'Մեկնարկ ',
+    otherInfo: 'Այլ տեղեկություններ',
+    jobTitle: 'Պաշտոն',
+    companyName: 'Հաստատության անվանումը',
+    EndDate: "Ավարտ",
+    eG: 'Օր. ',
+    english: 'Անգլերեն',
+    russian: 'Ռուսերեն',
+    armenian: 'Հայերեն',
+    basics: 'Հիմնական',
+    advanced: 'Առաջադեմ',
+    Intermediate: 'Միջանկյալ',
+    Expert: 'Փորձագետ',
+    Welcome: 'Բարի գալուստ',
+    Languages:'Լեզուներ'
+    
+
 
 };
 

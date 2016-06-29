@@ -32,9 +32,34 @@ var translations = {
     download: 'Download',
     edit: 'Edit',
     skills: 'Skills',
-    work: 'Work',
+    work: 'Work Experience',
     education: 'Education',
-    Template: 'Template'
+    Template: 'Template',
+    logout: 'Logout',
+    uploadImage: "Upload Image",
+    cancel:'Cancel',
+    CourseName:'Course name',
+    institutionName:'Institution name',
+    startDate:'Start date',
+    otherInfo:'Other Information',
+    jobTitle:'Job title',
+    companyName: 'Company name',
+    EndDate:"End date",
+    eG:'e.g',
+    english: 'English',
+    russian:'Russian',
+    armenian:'Armenian',
+    basics:'Basics',
+    advanced:'Advanced',
+    Intermediate:'Intermediate',
+    Expert:'Expert',
+    Welcome:'Welcome',
+    Languages:'Languages'
+
+
+
+
+
 };
 
 module.exports = translations;
