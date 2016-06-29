@@ -86,8 +86,10 @@
         </div>
         <!--<button type="button" onclick="javascript:pdfToHTML()"-->
                 <!--class="btn btn-info btn-lg"><%= global.lang.download %></button>-->
-        <form method="post" action="/pdfGenrator">
-        <input type="text" name="content" placeholder="bla bla" id="allInfo" value="kkk" style="color:black"/>
+        <form method="post" action="/pdfGenrator" style="color:black">
+        <input type="hidden" name="content" id="allInfo"/>
+        <input type="hidden" name="cv_name" id="nameInfo"/>
+        <input type="hidden" name="cv_lastname" id="lastnameInfo"/>
         <button type="submit"
         class="btn btn-info btn-lg"><%= global.lang.download %></button>
         </form>

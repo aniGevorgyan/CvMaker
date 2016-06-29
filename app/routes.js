@@ -111,6 +111,8 @@ module.exports = function (app, passport) {
         var fs2 = require('fs');
         var path = require('path');
         var content = req.body.content;
+        var cv_name = req.body.cv_name;
+        var cv_lastname = req.body.cv_lastname;
         var headContent = '<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' +
             '<link rel="stylesheet" href="' + path.resolve(".") + '/public/vendor/bower_components/bootstrap/css/bootstrap.css">' +
             '<link rel="stylesheet" href="' + path.resolve(".") + '/public/css/app.css">';
@@ -118,9 +120,10 @@ module.exports = function (app, passport) {
         wkhtmltopdf('<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' +
             headContent +
             '</head><body>' + content + '</body></html>', {pageSize: 'A4'})
-            .pipe(fs2.createWriteStream(path.resolve(".") + '/PDF/' + "qwe" + '.pdf'));
+            .pipe(fs2.createWriteStream(path.resolve(".") + '/PDF/' + "armCv_" + cv_name + "_" + cv_lastname + '.pdf'));
         console.log(content);
-        res.download(path.resolve(".") + '/PDF/' + "qwe" + '.pdf');
+        // res.end();
+        res.download(path.resolve(".") + '/PDF/' + "armCv_" + cv_name + "_" + cv_lastname + '.pdf');
     });
 };
 
