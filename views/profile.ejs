@@ -2,96 +2,19 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content_login">
     <div class="main_div">
         <div id="pdf2htmldiv"
-             class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 div bounceInLeft animated">
+             class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 div bounceInLeft animated">
             <div class="templates main-template" id="basic-table">
-                <div class="">
-                    <div class="col-xs-10">
-                        <span><img src=" /images/papskok.png" class="profile_image"/></span>
-                        <span class="firstName title" style="margin-left: 40px"></span>&nbsp;&nbsp;
-                        <span class="lastName title"></span>
-                    </div>
-                    <div class="col-xs-2"><i class="fa fa-times fa-3x close_button pull-right" aria-hidden="true"></i>
-                    </div>
-                </div>
-                <div class="tooTr">
-                    <div class="col-xs-4 cv_parts">
-                        <img src=" /images/personal.png"><br/>
-                        <span class="spanText"><%= global.lang.personalInfo %></span>
-                    </div>
-                    <div class="col-xs-4 cv_parts_2">
-                        <p><%= global.lang.name %>: <span class="firstName"></span></p>
-                        <p><%= global.lang.lastName %>: <span class="lastName"></span></p>
-                        <p><%= global.lang.date %>: <span class="dob"></span></p>
-                        <p><%= global.lang.nationality %>: <span class="nationality"></span></p>
-                    </div>
-                    <div class="col-xs-4 cv_parts_3">
-                        <p><%= global.lang.email %>: <span class="email"></span></p>
-                        <p><%= global.lang.phoneNumber %>: <span class="phone"></span></p>
-                        <p><%= global.lang.address %>: <span class="address"></span></p>
-                    </div>
-                </div>
-                <div class="oneTr">
-                    <div class="col-xs-4 cv_parts">
-                        <img src=" /images/uchoba.png"><br/>
-                        <span class="spanText"><%= global.lang.education %></span>
-                    </div>
-                    <div class="col-xs-8">
-                        <span class="bold_font eduCourse"></span>
-                        <span class="color_blue pull-right"><span class="eduStart color_blue"></span> - <span
-                                    class="eduEnd color_blue"></span></span>
-                        <p class="color_blue eduInstitution">GPMI Gyumri</p>
-                        <p class="eduInfo"></p>
-                    </div>
-                </div>
-                <div class="tooTr">
-                    <div class="col-xs-4 cv_parts">
-                        <img src=" /images/work.png"><br/>
-                        <span class="spanText"><%= global.lang.work %></span>
-                    </div>
-                    <div class="col-xs-8">
-                        <span class="bold_font workTitle">bla bla</span>
-                        <span class="color_blue pull-right"><span class="workStart color_blue"></span> - <span
-                                    class="workEnd color_blue"></span></span>
-                        <p class="color_blue workCompany">GPMI Gyumri</p>
-                        <p class="workInfo"></p>
-                    </div>
-                </div>
-                <div class="oneTr">
-                    <div class="col-xs-4 cv_parts">
-                        <img src=" /images/skills.png"><br/>
-                        <span class="spanText"><%= global.lang.skills %></span>
-                    </div>
-                    <div class="col-xs-4 cv_parts_2">
-                        <p class="bold_font center_align">Software</p>
-                        <!--<p>Last name: <span class="lastName"></span></p>-->
-                        <!--<p>Date of birth: <span class="dob"></span></p>-->
-                        <!--<p>Nationality: <span class="nationality"></span></p>-->
-                    </div>
-                    <div class="col-xs-4 cv_parts_3">
-                        <p class="bold_font center_align"><%= global.lang.Languages %></p>
-                        <p><span class="language"></span><span class="langRange pull-right"></span></p>
-                        <p><span class="language2"></span><span class="langRange2 pull-right"></span></p>
-                        <p><span class="language3"></span><span class="langRange3 pull-right"></span></p>
-                        <!--<p>Address: <span class="address"></span></p>-->
-                    </div>
-                </div>
-                <div class="tooTr">
-                    <div class="col-xs-4 cv_parts">
-                        <img src=" /images/hobbies.png"><br/>
-                        <span class="spanText">Hobbies</span>
-                    </div>
-                    <div class="col-xs-8" style="color:red">esdrghjdfghsdfgh</div>
-                </div>
+                <%- partial('./templates/template_1.ejs') %>
             </div>
         </div>
         <!--<button type="button" onclick="javascript:pdfToHTML()"-->
-                <!--class="btn btn-info btn-lg"><%= global.lang.download %></button>-->
+        <!--class="btn btn-info btn-lg"><%= global.lang.download %></button>-->
         <form method="post" action="/pdfGenrator" style="color:black">
-        <input type="hidden" name="content" id="allInfo"/>
-        <input type="hidden" name="cv_name" id="nameInfo"/>
-        <input type="hidden" name="cv_lastname" id="lastnameInfo"/>
-        <button type="submit"
-        class="btn btn-info btn-lg"><%= global.lang.download %></button>
+            <input type="hidden" name="content" id="allInfo"/>
+            <input type="hidden" name="cv_name" id="nameInfo"/>
+            <input type="hidden" name="cv_lastname" id="lastnameInfo"/>
+            <button type="submit"
+                    class="btn btn-info btn-lg"><%= global.lang.download %></button>
         </form>
         <br/>
         <button type="button" class="btn btn-info btn-lg" id="edit"><%= global.lang.edit %></button>
@@ -155,6 +78,7 @@
                         <input type="submit" value=" <%= global.lang.uploadImage %>" name="submit" class="upload_image">
                     </form>
                     <form name="myForm" novalidate>
+                        <div class="animated bounceInLeft">
                         <input type="text" class="form-control" name="firstName" ng-model="firstName"
                                ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
                                placeholder="<%= global.lang.name %>" required>
@@ -177,6 +101,7 @@
                         <input type="text" class="form-control" name="address" ng-minlength="3" ng-maxlength="30"
                                ng-pattern="/[A-Za-zա-ֆа-я0-9'\.\-\s\,]/i" ng-model="address" required
                                placeholder="<%= global.lang.address %>">
+                        </div>
                         <button type="button" class="btn btn-info btn-lg preview"><%= global.lang.preview %></button>
                         <button type="reset" class="btn btn-info btn-lg" id="reset"><%= global.lang.cancel %></button>
                     </form>
@@ -185,22 +110,49 @@
             <section id="content2">
                 <div class="col-lg-6 col-lg-offset-3 free_page">
                     <form name="myForm" novalidate>
-                        <input type="text" class="form-control" name="eduCourse" ng-model="eduCourse"
-                               ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
-                               placeholder="<%= global.lang.CourseName %>" required>
-                        <input type="text" class="form-control" name="eduInstitution" ng-minlength="3" ng-maxlength="20"
-                               ng-pattern="/[a-zա-ֆа-я ,.'-]{3,30}/i" ng-model="eduInstitution" required
-                               placeholder="<%= global.lang.institutionName %>">
-                        <input type="text" onfocus="(this.type='date')" class="form-control" name="eduStart"
-                               ng-minlength="3" ng-maxlength="20"
-                               ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="eduStart"
-                               required placeholder="<%= global.lang.startDate %>">
-                        <input type="text" onfocus="(this.type='date')" class="form-control" name="eduEnd"
-                               ng-minlength="3" ng-maxlength="20"
-                               ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="eduEnd"
-                               required placeholder="<%= global.lang.EndDate %>">
+                        <div id="education_1" class="animated bounceInLeft">
+                            <input type="text" class="form-control" name="eduCourse" ng-model="eduCourse"
+                                   ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
+                                   placeholder="<%= global.lang.CourseName %>" required>
+                            <input type="text" class="form-control" name="eduInstitution" ng-minlength="3"
+                                   ng-maxlength="20"
+                                   ng-pattern="/[a-zա-ֆа-я ,.'-]{3,30}/i" ng-model="eduInstitution" required
+                                   placeholder="<%= global.lang.institutionName %>">
+                            <input type="text" onfocus="(this.type='date')" class="form-control" name="eduStart"
+                                   ng-minlength="3" ng-maxlength="20"
+                                   ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/"
+                                   ng-model="eduStart"
+                                   required placeholder="<%= global.lang.startDate %>">
+                            <input type="text" onfocus="(this.type='date')" class="form-control" name="eduEnd"
+                                   ng-minlength="3" ng-maxlength="20"
+                                   ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/"
+                                   ng-model="eduEnd"
+                                   required placeholder="<%= global.lang.EndDate %>">
                         <textarea class="form-control" id="textArea" name="eduInfo"
                                   placeholder="<%= global.lang.otherInfo %>"></textarea>
+                        </div>
+                        <div id="education_2" class="animated bounceInRight" style="display: none;">
+                            <input type="text" class="form-control" name="eduCourse2" ng-model="eduCourse2"
+                                   ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
+                                   placeholder="<%= global.lang.CourseName %>" required>
+                            <input type="text" class="form-control" name="eduInstitution2" ng-minlength="3"
+                                   ng-maxlength="20"
+                                   ng-pattern="/[a-zա-ֆа-я ,.'-]{3,30}/i" ng-model="eduInstitution2" required
+                                   placeholder="<%= global.lang.institutionName %>">
+                            <input type="text" onfocus="(this.type='date')" class="form-control" name="eduStart2"
+                                   ng-minlength="3" ng-maxlength="20"
+                                   ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/"
+                                   ng-model="eduStart2"
+                                   required placeholder="<%= global.lang.startDate %>">
+                            <input type="text" onfocus="(this.type='date')" class="form-control" name="eduEnd2"
+                                   ng-minlength="3" ng-maxlength="20"
+                                   ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/"
+                                   ng-model="eduEnd2"
+                                   required placeholder="<%= global.lang.EndDate %>">
+                        <textarea class="form-control" id="textArea" name="eduInfo2"
+                                  placeholder="<%= global.lang.otherInfo %>"></textarea>
+                        </div>
+                        <p class="addEntryEducation"><i class="fa fa-plus" aria-hidden="true"> </i> Add Entry</p>
                         <button type="button" class="btn btn-info btn-lg preview"><%= global.lang.preview %></button>
                         <button type="reset" class="btn btn-info btn-lg" id="reset"><%= global.lang.cancel %></button>
                     </form>
@@ -209,22 +161,49 @@
             <section id="content3">
                 <div class="col-lg-6 col-lg-offset-3 free_page">
                     <form name="myForm" novalidate>
-                        <input type="text" class="form-control" name="workTitle" ng-model="workTitle"
-                               ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
-                               placeholder="<%= global.lang.jobTitle %>" required>
-                        <input type="text" class="form-control" name="workCompany" ng-minlength="3" ng-maxlength="20"
-                               ng-pattern="/[a-zա-ֆа-я ,.'-]{3,30}/i" ng-model="workCompany" required
-                               placeholder="<%= global.lang.companyName %>">
-                        <input type="text" onfocus="(this.type='date')" class="form-control" name="workStart"
-                               ng-minlength="3" ng-maxlength="20"
-                               ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="workStart"
-                               required placeholder="<%= global.lang.startDate %>">
-                        <input type="text" onfocus="(this.type='date')" class="form-control" name="workEnd"
-                               ng-minlength="3" ng-maxlength="20"
-                               ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/" ng-model="workEnd"
-                               required placeholder="<%= global.lang.EndDate %>">
+                        <div id="work_1" class="animated bounceInLeft">
+                            <input type="text" class="form-control" name="workTitle" ng-model="workTitle"
+                                   ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
+                                   placeholder="<%= global.lang.jobTitle %>" required>
+                            <input type="text" class="form-control" name="workCompany" ng-minlength="3"
+                                   ng-maxlength="20"
+                                   ng-pattern="/[a-zա-ֆа-я ,.'-]{3,30}/i" ng-model="workCompany" required
+                                   placeholder="<%= global.lang.companyName %>">
+                            <input type="text" onfocus="(this.type='date')" class="form-control" name="workStart"
+                                   ng-minlength="3" ng-maxlength="20"
+                                   ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/"
+                                   ng-model="workStart"
+                                   required placeholder="<%= global.lang.startDate %>">
+                            <input type="text" onfocus="(this.type='date')" class="form-control" name="workEnd"
+                                   ng-minlength="3" ng-maxlength="20"
+                                   ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/"
+                                   ng-model="workEnd"
+                                   required placeholder="<%= global.lang.EndDate %>">
                         <textarea class="form-control" id="textArea" name="workInfo"
                                   placeholder="<%= global.lang.otherInfo %>"></textarea>
+                        </div>
+                        <div id="work_2" class="animated bounceInLeft" style="display: none;">
+                            <input type="text" class="form-control" name="workTitle2" ng-model="workTitle2"
+                                   ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
+                                   placeholder="<%= global.lang.jobTitle %>" required>
+                            <input type="text" class="form-control" name="workCompany2" ng-minlength="3"
+                                   ng-maxlength="20"
+                                   ng-pattern="/[a-zա-ֆа-я ,.'-]{3,30}/i" ng-model="workCompany2" required
+                                   placeholder="<%= global.lang.companyName %>">
+                            <input type="text" onfocus="(this.type='date')" class="form-control" name="workStart2"
+                                   ng-minlength="3" ng-maxlength="20"
+                                   ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/"
+                                   ng-model="workStart2"
+                                   required placeholder="<%= global.lang.startDate %>">
+                            <input type="text" onfocus="(this.type='date')" class="form-control" name="workEnd2"
+                                   ng-minlength="3" ng-maxlength="20"
+                                   ng-pattern="/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/"
+                                   ng-model="workEnd2"
+                                   required placeholder="<%= global.lang.EndDate %>">
+                        <textarea class="form-control" id="textArea" name="workInfo2"
+                                  placeholder="<%= global.lang.otherInfo %>"></textarea>
+                        </div>
+                        <p class="addEntryWork"><i class="fa fa-plus" aria-hidden="true"> </i> Add Entry</p>
                         <button type="button" class="btn btn-info btn-lg preview"><%= global.lang.preview %></button>
                         <button type="reset" class="btn btn-info btn-lg" id="reset"><%= global.lang.cancel %></button>
                     </form>
@@ -232,9 +211,9 @@
             </section>
             <section id="content4">
                 <div class="col-lg-10 col-lg-offset-1 free_page">
-                    <h2 style="color: #02547A;margin-left: 15px"><%= global.lang.Languages %></h2>
                     <form name="myForm" novalidate>
-                        <div class="row">
+                        <h2 style="color: #02547A;margin-left: 15px"><%= global.lang.Languages %></h2>
+                        <div class="row animated bounceInRight">
                             <div class="col-xs-4">
                                 <input type="text" class="form-control" name="language" ng-model="language"
                                        ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
@@ -243,14 +222,16 @@
                             <div class="col-xs-8">
                                 <label class="lang"><input type="radio" name="langRange"
                                                            value="Basics"/><i></i><%= global.lang.basics %></label>
-                                <label class="lang"><input type="radio" name="langRange" value="Intermediate"/><i></i> <%= global.lang.Intermediate %></label>
+                                <label class="lang"><input type="radio" name="langRange"
+                                                           value="Intermediate"/><i></i> <%= global.lang.Intermediate %>
+                                </label>
                                 <label class="lang"><input type="radio" name="langRange"
                                                            value="Advanced"/><i></i><%= global.lang.advanced %></label>
                                 <label class="lang"><input type="radio" name="langRange"
                                                            value="Expert"/><i></i><%= global.lang.Expert %></label>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row animated bounceInRight lang2" style="display: none;">
                             <div class="col-xs-4">
                                 <input type="text" class="form-control" name="language2" ng-model="language2"
                                        ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
@@ -259,14 +240,16 @@
                             <div class="col-xs-8">
                                 <label class="lang"><input type="radio" name="langRange2"
                                                            value="Basics"/><i></i><%= global.lang.basics %></label>
-                                <label class="lang"><input type="radio" name="langRange2" value="Intermediate"/><i></i><%= global.lang.Intermediate %></label>
+                                <label class="lang"><input type="radio" name="langRange2"
+                                                           value="Intermediate"/><i></i><%= global.lang.Intermediate %>
+                                </label>
                                 <label class="lang"><input type="radio" name="langRange2"
                                                            value="Advanced"/><i></i><%= global.lang.advanced %></label>
                                 <label class="lang"><input type="radio" name="langRange2"
                                                            value="Expert"/><i></i><%= global.lang.Expert %></label>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row animated bounceInRight lang3" style="display: none">
                             <div class="col-xs-4">
                                 <input type="text" class="form-control" name="language3" ng-model="language3"
                                        ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
@@ -275,13 +258,72 @@
                             <div class="col-xs-8">
                                 <label class="lang"><input type="radio" name="langRange3"
                                                            value="Basics"/><i></i><%= global.lang.basics %></label>
-                                <label class="lang"><input type="radio" name="langRange3" value="Intermediate"/><i></i><%= global.lang.Intermediate %></label>
+                                <label class="lang"><input type="radio" name="langRange3"
+                                                           value="Intermediate"/><i></i><%= global.lang.Intermediate %>
+                                </label>
                                 <label class="lang"><input type="radio" name="langRange3"
                                                            value="Advanced"/><i></i><%= global.lang.advanced %></label>
                                 <label class="lang"><input type="radio" name="langRange3"
                                                            value="Expert"/><i></i><%= global.lang.Expert %></label>
                             </div>
                         </div>
+                        <p class="addEntryLanguage"><i class="fa fa-plus" aria-hidden="true"> </i> Add Entry</p>
+                        <h2 style="color: #02547A;margin-left: 15px">Software</h2>
+                        <div class="row animated bounceInLeft">
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" name="software" ng-model="software"
+                                       ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
+                                       placeholder="<%= global.lang.eG %> PhotoShop" required>
+                            </div>
+                            <div class="col-xs-8">
+                                <label class="lang"><input type="radio" name="softRange"
+                                                           value="Basics"/><i></i><%= global.lang.basics %></label>
+                                <label class="lang"><input type="radio" name="softRange"
+                                                           value="Intermediate"/><i></i> <%= global.lang.Intermediate %>
+                                </label>
+                                <label class="lang"><input type="radio" name="softRange"
+                                                           value="Advanced"/><i></i><%= global.lang.advanced %></label>
+                                <label class="lang"><input type="radio" name="softRange"
+                                                           value="Expert"/><i></i><%= global.lang.Expert %></label>
+                            </div>
+                        </div>
+                        <div class="row animated bounceInLeft soft2" style="display: none;">
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" name="software2" ng-model="software2"
+                                       ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
+                                       placeholder="<%= global.lang.eG %> <%= global.lang.russian %>" required>
+                            </div>
+                            <div class="col-xs-8">
+                                <label class="lang"><input type="radio" name="softRange2"
+                                                           value="Basics"/><i></i><%= global.lang.basics %></label>
+                                <label class="lang"><input type="radio" name="softRange2"
+                                                           value="Intermediate"/><i></i><%= global.lang.Intermediate %>
+                                </label>
+                                <label class="lang"><input type="radio" name="softRange2"
+                                                           value="Advanced"/><i></i><%= global.lang.advanced %></label>
+                                <label class="lang"><input type="radio" name="softRange2"
+                                                           value="Expert"/><i></i><%= global.lang.Expert %></label>
+                            </div>
+                        </div>
+                        <div class="row animated bounceInLeft soft3" style="display: none;">
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" name="software3" ng-model="software3"
+                                       ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
+                                       placeholder="<%= global.lang.eG %> <%= global.lang.armenian %>" required>
+                            </div>
+                            <div class="col-xs-8">
+                                <label class="lang"><input type="radio" name="softRange3"
+                                                           value="Basics"/><i></i><%= global.lang.basics %></label>
+                                <label class="lang"><input type="radio" name="softRange3"
+                                                           value="Intermediate"/><i></i><%= global.lang.Intermediate %>
+                                </label>
+                                <label class="lang"><input type="radio" name="softRange3"
+                                                           value="Advanced"/><i></i><%= global.lang.advanced %></label>
+                                <label class="lang"><input type="radio" name="softRange3"
+                                                           value="Expert"/><i></i><%= global.lang.Expert %></label>
+                            </div>
+                        </div>
+                        <p class="addEntrySoftware"><i class="fa fa-plus" aria-hidden="true"> </i> Add Entry</p>
                         <button type="button" class="btn btn-info btn-lg preview"><%= global.lang.preview %></button>
                         <button type="reset" class="btn btn-info btn-lg" id="reset"><%= global.lang.cancel %></button>
                     </form>

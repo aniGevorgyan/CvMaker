@@ -120,10 +120,10 @@ module.exports = function (app, passport) {
         wkhtmltopdf('<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' +
             headContent +
             '</head><body>' + content + '</body></html>', {pageSize: 'A4'})
-            .pipe(fs2.createWriteStream(path.resolve(".") + '/PDF/' + "armCv_" + cv_name + "_" + cv_lastname + '.pdf'));
+            .pipe(fs2.createWriteStream(path.resolve(".") + '/public/PDF/' + "armCv_" + cv_name + "_" + cv_lastname + '.pdf'));
         console.log(content);
         // res.end();
-        res.download(path.resolve(".") + '/PDF/' + "armCv_" + cv_name + "_" + cv_lastname + '.pdf');
+        res.download(path.resolve(".") + '/public/PDF/' + "armCv_" + cv_name + "_" + cv_lastname + '.pdf');
     });
 };
 

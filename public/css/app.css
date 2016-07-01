@@ -411,6 +411,7 @@ textArea {
 
 .div p, .div span, .div h2, .div h3 {
     color: black;
+    font-size: 16px;
 }
 
 .div h3 {
@@ -419,7 +420,8 @@ textArea {
 }
 
 .div h2 {
-    margin-left: 28%;
+    margin-left: 17%;
+    font-size: 35px;
 }
 
 .div div div:first-child p {
@@ -476,15 +478,14 @@ input[type="radio"] {
 }
 
 input[type="radio"] + i:before {
-    content: url(../images/noCheck.png);
-    margin-right: 10px;
+    content: url(../images/unchecked_button_2.png);
+    margin: -10px -5px 0 0;
     float: left;
 }
 
 input[type="radio"]:checked + i:before {
-    content: url(../images/Check.png);
-    margin: -7px -5px 0 0;
-    height: 26px;
+    content: url(../images/checked_button_2.png);
+    margin: -10px -5px 0 0;
     float: left;
 }
 
@@ -594,7 +595,7 @@ label[for*='3']:before {
 }
 
 label[for*='4']:before {
-    content: "\f209";
+    content: "\f0ad";
 }
 
 label:hover {
@@ -737,14 +738,14 @@ input:checked + label {
 }
 
 .profile_image {
-    width: 150px !important;
-    height: 150px !important;
+    width: 250px !important;
+    height: 250px !important;
     margin-left: 5% !important;
     padding: 5px;
 }
 
 .title {
-    font-size: 24px;
+    font-size: 30px;
 }
 
 span .title:first-child {
@@ -767,13 +768,26 @@ span .title:first-child {
     padding: 15px 15px 0 0;
 }
 
-.langRange img {
-    width: 100px !important;
+.langRange img, .langRange2 img, .langRange3 img,
+.softRange img, .softRange2 img, .softRange3 img{
+    width: 150px !important;
     height: 20px !important;
+    margin-top: 5px;
 }
 
 .langRange {
     margin-left: 0 !important;
+}
+
+.addEntryEducation, .addEntryWork,.addEntryLanguage, .addEntrySoftware{
+    padding:5px;
+    float:right;
+    color:white;
+    border-radius: 25px;
+    background: #206FA7;
+    border: 1px solid #206FA7;
+    cursor: pointer;
+    margin-top:10px;
 }
 
 @media screen and (max-width: 650px) {
