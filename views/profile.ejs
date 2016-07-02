@@ -59,6 +59,9 @@
             <input id="tab4" type="radio" name="tabs">
             <label for="tab4"> <%= global.lang.skills %></label>
 
+            <input id="tab5" type="radio" name="tabs">
+            <label for="tab5"> Hobbies</label>
+
             <section id="content0">
                 <div id="template_1" class="templates"></div>
                 <div id="template_2" class="templates"></div>
@@ -347,6 +350,15 @@
                         <button type="reset" class="btn btn-info btn-lg" id="reset"><%= global.lang.cancel %></button>
                     </form>
                 </div>
+            </section>
+            <section id="content5">
+                <div class="col-lg-10 col-lg-offset-1 free_page">
+                    <form name="myForm" novalidate>
+                        <input type="checkbox" value="music" name="music"/> Music
+                        <p class="addEntrySoftware"><i class="fa fa-plus" aria-hidden="true"> </i> Add Entry</p>
+                        <button type="button" class="btn btn-info btn-lg preview"><%= global.lang.preview %></button>
+                        <button type="reset" class="btn btn-info btn-lg" id="reset"><%= global.lang.cancel %></button>
+                    </form></div>
             </section>
 
         </main>
