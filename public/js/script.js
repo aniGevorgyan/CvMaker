@@ -115,6 +115,48 @@ $(document).ready(function () {
         $('.soft2').show();
         $('.soft3').show();
     });
+    $('#template_8').click(function () {
+        $('.block3').css('display','none');
+        $('.block1').css('display','none');
+        $('.block2').show();
+        $('.tmpImg1').hide();
+        $('#template_1').css('background', 'url(../images/1.png)');
+        $('#template_1').css('background-size','cover');
+        $('.tmpImg5').hide();
+        $('#template_5').css('background', 'url(../images/3.png)');
+        $('#template_5').css('background-size','cover');
+        $('#template_8').html('<img src="/images/ok.gif" class="tmpImg8"/>');
+        $('#template_8').css('background', 'linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/7.png)');
+        $('#template_8').css('background-size','cover');
+    });
+    $('#template_1').click(function () {
+        $('.block2').css('display','none');
+        $('.block1').css('display','none');
+        $('.block3').show();
+        $('.tmpImg5').hide();
+        $('#template_5').css('background', 'url(../images/3.png)');
+        $('#template_5').css('background-size','cover');
+        $('.tmpImg8').hide();
+        $('#template_8').css('background', 'url(../images/7.png)');
+        $('#template_8').css('background-size','cover');
+        $('#template_1').html('<img src="/images/ok.gif" class="tmpImg1"/>');
+        $('#template_1').css('background', 'linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/1.png)');
+        $('#template_1').css('background-size','cover');
+    });
+    $('#template_5').click(function () {
+        $('.block3').css('display','none');
+        $('.block2').css('display','none');
+        $('.block1').show();
+        $('.tmpImg1').hide();
+        $('#template_1').css('background', 'url(../images/1.png)');
+        $('#template_1').css('background-size','cover');
+        $('.tmpImg8').hide();
+        $('#template_8').css('background', 'url(../images/7.png)');
+        $('#template_8').css('background-size','cover');
+        $('#template_5').html('<img src="/images/ok.gif" class="tmpImg5"/>');
+        $('#template_5').css('background', 'linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/3.png)');
+        $('#template_5').css('background-size','cover');
+    })
 });
 
 var validationApp = angular.module('myApp', []);

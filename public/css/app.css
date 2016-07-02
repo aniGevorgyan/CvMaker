@@ -426,7 +426,7 @@ textArea {
 
 .div div div:first-child p {
     text-align: left;
-    margin-left: 100px;
+    /*margin-left: 100px;*/
     font-weight: bold;
     font-size: 18px;
 }
@@ -743,6 +743,10 @@ input:checked + label {
     margin-left: 5% !important;
     padding: 5px;
 }
+#profile_image{
+    margin-left: 0!important;
+    padding: 0;
+}
 
 .title {
     font-size: 30px;
@@ -853,4 +857,33 @@ article{
 }
 .textIcon{
     font-size: 1vw;
+}
+
+.tpl_3_header{
+    margin: 0 auto;
+    height: 260px;
+    background: url(../images/tpl_3_header.png);
+    background-size: 100% 100%;
+}
+
+.iconHeader{
+    width: 13%;
+    float: left;
+    margin-top: -10px;
+}
+.contentProfile{
+    min-height: 130px;
+}
+
+.tmpImg5{
+    margin: 50% auto;
+    display: block;
+}
+.tmpImg1{
+    margin: 50% auto;
+    display: block;
+}
+.tmpImg8{
+    margin: 50% auto;
+    display: block;
 }
