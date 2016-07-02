@@ -116,14 +116,12 @@ module.exports = function (app, passport) {
         var headContent = '<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' +
             '<link rel="stylesheet" href="' + path.resolve(".") + '/public/vendor/bower_components/bootstrap/css/bootstrap.css">' +
             '<link rel="stylesheet" href="' + path.resolve(".") + '/public/css/app.css">';
-
+        var file = path.resolve(".") + '/public/PDF/' + "armCv_" + cv_name + "_" + cv_lastname + '.pdf';
         wkhtmltopdf('<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' +
             headContent +
             '</head><body>' + content + '</body></html>', {pageSize: 'A4'})
-            .pipe(fs2.createWriteStream(path.resolve(".") + '/public/PDF/' + "armCv_" + cv_name + "_" + cv_lastname + '.pdf'));
-        console.log(content);
-        // res.end();
-        res.download(path.resolve(".") + '/public/PDF/' + "armCv_" + cv_name + "_" + cv_lastname + '.pdf');
+            .pipe(fs2.createWriteStream(file));
+        res.download(file);
     });
 };
 

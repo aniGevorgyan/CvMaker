@@ -464,8 +464,8 @@ input.ng-valid {
 
 #gender {
     float: left !important;
-    padding: 21px !important;
-    padding-left: 0 !important;
+    /*padding: 21px !important;*/
+    /*padding-left: 0 !important;*/
     color: #fff !important;
 }
 
@@ -811,4 +811,46 @@ span .title:first-child {
     .logo img {
         height: 40px;
     }
+}
+
+.tpl_2_header{
+    height: 150px;
+    margin: 0 auto;
+    background: url(../images/tpl_2_3.png);
+    background-size: 100% 100%;
+}
+article{
+    min-height: 600px;
+    margin: 0 auto;
+}
+.tpl_2_footer{
+    min-height: 50px!important;
+    margin: 0 auto;
+    background: url(../images/tpl_2_4.png);
+    background-size: 100% 100%;
+}
+.div tr td{
+    min-height: 200px;
+}
+.contentWork{
+    min-height: 330px;
+}
+.contentSkill{
+    min-height: 130px;
+    margin-top: 5px;
+}
+.nameBlock{
+    font-size: 1.2vw;
+    font-weight: bold;
+    color: #525252;
+}
+.iconki{
+    width: 25px;
+    margin-top: 5px;
+}
+.divIcon{
+    text-align: center;
+}
+.textIcon{
+    font-size: 1vw;
 }
