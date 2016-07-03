@@ -411,7 +411,7 @@ textArea {
 
 .div p, .div span, .div h2, .div h3 {
     color: black;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .div h3 {
@@ -427,7 +427,7 @@ textArea {
 .div div div:first-child p {
     text-align: left;
     /*margin-left: 100px;*/
-    font-weight: bold;
+    /*font-weight: bold;*/
     font-size: 18px;
 }
 
@@ -437,6 +437,10 @@ textArea {
     font-weight: 200;
     font-size: 18px;
     margin-left: 10px;
+}
+
+.spanText{
+    font-size: 20px!important;
 }
 
 .oneTr {
@@ -597,6 +601,9 @@ label[for*='3']:before {
 label[for*='4']:before {
     content: "\f0ad";
 }
+label[for*='5']:before {
+    content: "\f001";
+}
 
 label:hover {
     color: #02547A;
@@ -633,12 +640,12 @@ input:checked + label {
 }
 
 #template_1 {
-    background-image: url(../images/1.png);
+    background-image: url(../images/11.png);
     background-size: cover;
 }
 
 #template_1:hover {
-    background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/1.png);
+    background: linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/11.png);
     background-size: cover;
 }
 
@@ -735,7 +742,7 @@ input:checked + label {
 }
 
 .cv_parts_2 span, .cv_parts_3 span {
-    font-size: 14px !important;
+    font-size: 16px !important;
 }
 
 .profile_image {
@@ -761,6 +768,10 @@ span .title:first-child {
     color: #26b9de !important;
 }
 
+.color_yellow {
+    color: #FABD28 !important;
+}
+
 .bold_font {
     font-weight: bold
 }
@@ -784,7 +795,8 @@ span .title:first-child {
     margin-left: 0 !important;
 }
 
-.addEntryEducation, .addEntryWork,.addEntryLanguage, .addEntrySoftware{
+.addEntryEducation, .addEntryWork,.addEntryLanguage,
+.addEntrySoftware, .addEntryHobby {
     padding:5px;
     float:right;
     color:white;
@@ -835,13 +847,13 @@ article{
     background-size: 100% 100%;
 }
 .div tr td{
-    min-height: 200px;
+    min-height: 100px;
 }
 .contentWork{
-    min-height: 330px;
+    min-height: 100px;
 }
 .contentSkill{
-    min-height: 130px;
+    min-height: 100px;
     margin-top: 5px;
 }
 .nameBlock{
@@ -873,7 +885,7 @@ article{
     margin-top: -10px;
 }
 .contentProfile{
-    min-height: 130px;
+    min-height: 100px;
 }
 
 .tmpImg5{

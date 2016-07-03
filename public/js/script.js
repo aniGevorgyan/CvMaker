@@ -15,8 +15,11 @@ $(document).ready(function () {
     }
 
     function infoFromCheckedInputsImage(infoFromTo) {
-        var input = $("input[name=" + infoFromTo + "]:checked").val();
-        $("." + infoFromTo + "").html("<img src='http://localhost:8080/images/" + input + ".png' alt='" + input + "' />");
+        if($("input[name=" + infoFromTo + "]:checked").val() === 'Advanced' || $("input[name=" + infoFromTo + "]:checked").val() === 'Basics' ||
+            $("input[name=" + infoFromTo + "]:checked").val() === 'Intermediate' || $("input[name=" + infoFromTo + "]:checked").val() === 'Expert') {
+            var input = $("input[name=" + infoFromTo + "]:checked").val();
+            $("." + infoFromTo + "").html("<img src='http://localhost:8080/images/" + input + ".png' alt='" + input + "' />");
+        }
     }
 
     function infoFromTextArea(infoFromTo) {
@@ -74,7 +77,7 @@ $(document).ready(function () {
         // infoFromCheckedInputs("langRange3");
 
         $("#pdf2htmldiv img").each(function(){$(this).attr("src", $(this).attr("src").replace(" /images/","http://localhost:8080/images/") )});
-        $("#pdf2htmldiv img").each(function(){$(this).attr("src", $(this).attr("src").replace("\\uploads\\","http://localhost:8080\\uploads\\") )});
+        // $("#pdf2htmldiv img").each(function(){$(this).attr("src", $(this).attr("src").replace(" \\uploads\\","http://localhost:8080\\uploads\\") )});
         var cont = $('#pdf2htmldiv').html();
         var cv_name = $('.firstName').html();
         var cv_lastname = $('.lastName').html();
@@ -115,12 +118,15 @@ $(document).ready(function () {
         $('.soft2').show();
         $('.soft3').show();
     });
+    $('.addEntryHobby').click(function () {
+        $('.hobby2').show();
+    });
     $('#template_8').click(function () {
         $('.block3').css('display','none');
         $('.block1').css('display','none');
         $('.block2').show();
         $('.tmpImg1').hide();
-        $('#template_1').css('background', 'url(../images/1.png)');
+        $('#template_1').css('background', 'url(../images/11.png)');
         $('#template_1').css('background-size','cover');
         $('.tmpImg5').hide();
         $('#template_5').css('background', 'url(../images/3.png)');
@@ -140,7 +146,7 @@ $(document).ready(function () {
         $('#template_8').css('background', 'url(../images/7.png)');
         $('#template_8').css('background-size','cover');
         $('#template_1').html('<img src="/images/ok.gif" class="tmpImg1"/>');
-        $('#template_1').css('background', 'linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/1.png)');
+        $('#template_1').css('background', 'linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/11.png)');
         $('#template_1').css('background-size','cover');
     });
     $('#template_5').click(function () {
@@ -148,7 +154,7 @@ $(document).ready(function () {
         $('.block2').css('display','none');
         $('.block1').show();
         $('.tmpImg1').hide();
-        $('#template_1').css('background', 'url(../images/1.png)');
+        $('#template_1').css('background', 'url(../images/11.png)');
         $('#template_1').css('background-size','cover');
         $('.tmpImg8').hide();
         $('#template_8').css('background', 'url(../images/7.png)');

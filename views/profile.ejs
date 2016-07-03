@@ -60,7 +60,7 @@
             <label for="tab4"> <%= global.lang.skills %></label>
 
             <input id="tab5" type="radio" name="tabs">
-            <label for="tab5"> Hobbies</label>
+            <label for="tab5"> <%= global.lang.hobby %></label>
 
             <section id="content0">
                 <div id="template_1" class="templates"></div>
@@ -279,7 +279,7 @@
                             </div>
                         </div>
                         <p class="addEntryLanguage"><i class="fa fa-plus" aria-hidden="true"> </i> Add Entry</p>
-                        <h2 style="color: #02547A;margin-left: 15px">Software</h2>
+                        <h2 style="color: #02547A;margin-left: 15px"><%= global.lang.software %></h2>
                         <div class="row animated bounceInLeft">
                             <div class="col-xs-4">
                                 <input type="text" class="form-control" name="software" ng-model="software"
@@ -334,17 +334,6 @@
                                                            value="Expert"/><i></i><%= global.lang.Expert %></label>
                             </div>
                         </div>
-                        <div class="col-xs-12">
-                            <label class="lang"><input type="radio" name="softRange"
-                                                       value="Basics"/><i></i><%= global.lang.basics %></label>
-                            <label class="lang"><input type="radio" name="softRange"
-                                                       value="Intermediate"/><i></i> <%= global.lang.Intermediate %>
-                            </label>
-                            <label class="lang"><input type="radio" name="softRange"
-                                                       value="Advanced"/><i></i><%= global.lang.advanced %></label>
-                            <label class="lang"><input type="radio" name="softRange"
-                                                       value="Expert"/><i></i><%= global.lang.Expert %></label>
-                        </div>
                         <p class="addEntrySoftware"><i class="fa fa-plus" aria-hidden="true"> </i> Add Entry</p>
                         <button type="button" class="btn btn-info btn-lg preview"><%= global.lang.preview %></button>
                         <button type="reset" class="btn btn-info btn-lg" id="reset"><%= global.lang.cancel %></button>
@@ -354,8 +343,25 @@
             <section id="content5">
                 <div class="col-lg-10 col-lg-offset-1 free_page">
                     <form name="myForm" novalidate>
-                        <input type="checkbox" value="music" name="music"/> Music
-                        <p class="addEntrySoftware"><i class="fa fa-plus" aria-hidden="true"> </i> Add Entry</p>
+                        <div class="col-xs-12 animated bounceInRight">
+                            <label class="lang"><input type="checkbox" name="music"
+                                                       value="Music"/><i></i> Music </label><br/>
+                            <label class="lang"><input type="checkbox" name="sport"
+                                                       value="Sport"/><i></i> Sport </label><br/>
+                            <label class="lang"><input type="checkbox" name="art"
+                                                       value="Art"/><i></i> Art </label><br/>
+                            <label class="lang"><input type="checkbox" name="traveling"
+                                                       value="Traveling"/><i></i> Traveling </label><br/>
+                            <label class="lang"><input type="checkbox" name="networking"
+                                                       value="networking"/><i></i> Networking </label><br/>
+                            <input type="text" class="form-control" name="hobby1" ng-model="hobby1"
+                                   ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
+                                   placeholder="Your version" required>
+                            <input style="display: none" type="text" class="form-control hobby2" name="hobby2" ng-model="hobby2"
+                                   ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"
+                                   placeholder="Your version" required>
+                        </div>
+                        <p class="addEntryHobby"><i class="fa fa-plus" aria-hidden="true"> </i> Add Entry</p>
                         <button type="button" class="btn btn-info btn-lg preview"><%= global.lang.preview %></button>
                         <button type="reset" class="btn btn-info btn-lg" id="reset"><%= global.lang.cancel %></button>
                     </form></div>
@@ -380,8 +386,8 @@
                 success: function (response) {
                     console.log(response);
                     var res = response.substr(6);
-                    $("#status").attr("src", res);
-                    $(".profile_image").attr("src", res);
+                    $("#status").attr("src", 'http://localhost:8080' + res);
+                    $(".profile_image").attr("src", 'http://localhost:8080' + res);
 
                 }
             });

@@ -57,7 +57,9 @@ var translations = {
         advanced: 'Продвинутый',
         Intermediate: 'Средний',
         Expert: 'Эксперт',
-        Welcome: 'Добро пожаловат'
+        Welcome: 'добро пожаловать',
+        software: 'IT Навыки',
+        hobby: 'Увлечения'
     }
     ;
 

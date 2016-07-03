@@ -54,7 +54,9 @@ var translations = {
     Intermediate:'Intermediate',
     Expert:'Expert',
     Welcome:'Welcome',
-    Languages:'Languages'
+    Languages:'Languages',
+    software: 'Software',
+    hobby: 'Hobbies'
 
 
 

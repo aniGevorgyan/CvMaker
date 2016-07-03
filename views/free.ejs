@@ -1,10 +1,15 @@
 <% layout('layout/page') %>
+<style>
+    .div div div:first-child p{
+        color:#02547A;
+    }
+</style>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content_login">
     <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 login_form">
         <h1><span class="fa fa-info"></span> <%= global.lang.personalInfo %> </h1>
         <form name="myForm" novalidate>
             <div class="col-lg-5 col-lg-offset-1 free_page">
-                <label id="gender"><input type="radio" name="gender" ng-model="site" value="<%= global.lang.male %>" /><i></i> <%= global.lang.male %> </label>
+                <label style="padding: 15px 0;" id="gender"><input type="radio" name="gender" ng-model="site" value="<%= global.lang.male %>" /><i></i> <%= global.lang.male %> </label>
                 <label id="gender"> <input type="radio" name="gender" value="<%= global.lang.female %>" ng-model="ttt" /><i></i> <%= global.lang.female %></label>
                 <input type="text" class="form-control" name="firstName" ng-model="firstName" ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-maxlength="20"  placeholder="<%= global.lang.name %>" required>
                 <input type="text" class="form-control" name="lastName" ng-minlength="3" ng-maxlength="20" ng-pattern="/[a-zա-ֆа-я ,.'-]{3,20}/i" ng-model="lastName" required placeholder="<%= global.lang.lastName %>">
@@ -33,7 +38,7 @@
             <div class="div" id="basic-table" style="width: 100%;background: white">
                 <div class="">
                     <div class="col-xs-10">
-                        <h2><%= global.lang.resume %> <span style="font-size: 35px" class="firstName"> </span> <span style="font-size: 35px"
+                        <h2 style="color:#02547A; margin-left: 90px;margin-top:30px"><%= global.lang.resume %> <span style="font-size: 35px;color:#02547A;" class="firstName"> </span> <span style="font-size: 35px;color:#02547A;"
                                     class="lastName"> </span></h2>
                     </div>
                     <div class="col-xs-2"><i class="fa fa-times fa-3x close_button pull-right" aria-hidden="true"></i>
@@ -46,42 +51,42 @@
                 </div>
                 <div class="">
                     <div class="col-xs-12">
-                        <p><%= global.lang.gender %>: <span class="gender"></span></p>
+                        <p style="color:#02547A;margin-left: 90px;"><%= global.lang.gender %>: <span class="gender"></span></p>
                     </div>
                 </div>
                 <div class="">
                     <div class="col-xs-12">
-                        <p><%= global.lang.name %>: <span class="firstName"></span></p>
+                        <p style="color:#02547A; margin-left: 90px;"><%= global.lang.name %>: <span class="firstName"></span></p>
                     </div>
                 </div>
                 <div class="">
                     <div class="col-xs-12">
-                        <p><%= global.lang.lastName %>: <span class="lastName"></span></p>
+                        <p style="color:#02547A; margin-left: 90px;"><%= global.lang.lastName %>: <span class="lastName"></span></p>
                     </div>
                 </div>
                 <div class="">
                     <div class="col-xs-12">
-                        <p><%= global.lang.date %>: <span class="dob"></span></p>
+                        <p style="color:#02547A;margin-left: 90px;"><%= global.lang.date %>: <span class="dob"></span></p>
                     </div>
                 </div>
                 <div class="">
                     <div class="col-xs-12">
-                        <p><%= global.lang.nationality %>: <span class="nationality"></span></p>
+                        <p style="color:#02547A;margin-left: 90px;"><%= global.lang.nationality %>: <span class="nationality"></span></p>
                     </div>
                 </div>
                 <div class="">
                     <div class="col-xs-12">
-                        <p><%= global.lang.email %>: <span class="email"></span></p>
+                        <p style="color:#02547A; margin-left: 90px;"><%= global.lang.email %>: <span class="email"></span></p>
                     </div>
                 </div>
                 <div class="oneTr">
                     <div class="col-xs-12">
-                        <p><%= global.lang.phoneNumber %>: <span class="phone"></span></p>
+                        <p style="color:#02547A; margin-left: 90px;"><%= global.lang.phoneNumber %>: <span class="phone"></span></p>
                     </div>
                 </div>
                 <div class="oneTr">
                     <div class="col-xs-12">
-                        <p><%= global.lang.address %>: <span class="address"></span></p>
+                        <p style="color:#02547A; margin-left: 90px;"><%= global.lang.address %>: <span class="address"></span></p>
                     </div>
                 </div>
             </div>

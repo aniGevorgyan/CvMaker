@@ -56,7 +56,9 @@ var translations = {
     Intermediate: 'Միջին',
     Expert: 'Գերազանց',
     Welcome: 'Բարի գալուստ',
-    Languages:'Լեզուներ'
+    Languages:'Լեզուներ',
+    software: 'IT Հմտություններ',
+    hobby: 'Հետաքրքրություններ'
     
 
 
