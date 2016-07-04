@@ -110,13 +110,23 @@ $(document).ready(function () {
     $('.addEntryEducation').click(function () {
         $('#education_2').show();
     });
+    $lang = false;
     $('.addEntryLanguage').click(function () {
-        $('.lang2').show();
-        $('.lang3').show();
+        if(!$lang){
+            $('.lang2').show();
+            $lang = true;
+        }else{
+            $('.lang3').show();
+        }
     });
+    $soft = false;
     $('.addEntrySoftware').click(function () {
-        $('.soft2').show();
-        $('.soft3').show();
+        if(!$soft){
+            $('.soft2').show();
+            $soft = true;
+        }else{
+            $('.soft3').show();
+        }
     });
     $('.addEntryHobby').click(function () {
         $('.hobby2').show();
@@ -131,7 +141,7 @@ $(document).ready(function () {
         $('.tmpImg5').hide();
         $('#template_5').css('background', 'url(../images/3.png)');
         $('#template_5').css('background-size','cover');
-        $('#template_8').html('<img src="/images/ok.gif" class="tmpImg8"/>');
+        $('#template_8').html('<img src="/images/ok.png" class="tmpImg8"/>');
         $('#template_8').css('background', 'linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/7.png)');
         $('#template_8').css('background-size','cover');
     });
@@ -145,7 +155,7 @@ $(document).ready(function () {
         $('.tmpImg8').hide();
         $('#template_8').css('background', 'url(../images/7.png)');
         $('#template_8').css('background-size','cover');
-        $('#template_1').html('<img src="/images/ok.gif" class="tmpImg1"/>');
+        $('#template_1').html('<img src="/images/ok.png" class="tmpImg1"/>');
         $('#template_1').css('background', 'linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/11.png)');
         $('#template_1').css('background-size','cover');
     });
@@ -159,7 +169,7 @@ $(document).ready(function () {
         $('.tmpImg8').hide();
         $('#template_8').css('background', 'url(../images/7.png)');
         $('#template_8').css('background-size','cover');
-        $('#template_5').html('<img src="/images/ok.gif" class="tmpImg5"/>');
+        $('#template_5').html('<img src="/images/ok.png" class="tmpImg5"/>');
         $('#template_5').css('background', 'linear-gradient(rgba(24, 66, 108, 0.5), rgba(24, 66, 108, 0.5)), url(../images/3.png)');
         $('#template_5').css('background-size','cover');
     })

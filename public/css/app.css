@@ -492,6 +492,19 @@ input[type="radio"]:checked + i:before {
     margin: -10px -5px 0 0;
     float: left;
 }
+input[type="checkbox"] {
+    display: none;
+}
+input[type="checkbox"] + i:before {
+    content: url(../images/uncheckCheckbox.png);
+    margin: -3px 5px 0 0;
+    float: left;
+}
+input[type="checkbox"]:checked + i:before {
+    content: url(../images/checkCheckbox.png);
+    margin: -3px 5px 0 0;
+    float: left;
+}
 
 /* only to get the list vertical */
 .free_page > label {
