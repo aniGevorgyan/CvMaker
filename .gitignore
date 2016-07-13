@@ -2,4 +2,4 @@
 /.idea
 npm-debug.log
 /public/uploads/*
-/public/PDF/*
+/public/Downloads/*
